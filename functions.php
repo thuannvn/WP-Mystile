@@ -43,10 +43,7 @@ foreach ( $includes as $i ) {
 /* You can add custom functions below */
 /*-----------------------------------------------------------------------------------*/
 
-
-
-
-
+include('functions.custom.php');
 
 
 

@@ -37,7 +37,6 @@ global $woo_options, $woocommerce;
 <div id="wrapper">
 
 	<div id="top">
-
         
         <?php woo_nav_before(); ?>
 

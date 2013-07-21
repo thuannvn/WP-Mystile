@@ -1,6 +1,18 @@
-window.tag = window.tag || {};
-tag.hasjQuery = window.jQuery; 
+window._t = window._t || {};
+_t.hasjQuery = !!window.jQuery;
+
 // scrollClass
-tag.scrollClass = function () {
-    return console.log($(document).scroll);
+_t.scrollClass = function (data) {
+    console.log(data);
 };
+
+
+if (_t.hasjQuery) {
+    jQuery(document).ready(function () {
+        jQuery(window).scroll(function (e) {
+            _t.scrollClass(e.target);
+        });
+    });
+
+
+} // _t.hasjQuery

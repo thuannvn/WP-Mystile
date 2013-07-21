@@ -1,0 +1,189 @@
+    /* NAVIGATION -=- Positioning Hacks -=- */
+    #header #navigation {
+        position: absolute; 
+        top: -50px; left: 0;
+        float: none;
+        margin: 0 auto; 
+        width: auto;
+    }
+    #header #navigation > ul.nav {
+        float: left;
+        width: 100%;
+        max-width: 58em;
+    }
+
+    /* CART && NAVIGATION */
+    ul.nav li a {
+        padding: 1em;
+    }
+
+    #top ul.nav li a,
+
+    #header #navigation ul.nav > li a,
+    #header #navigation ul.nav > li:hover a a, 
+    #header #navigation ul.nav > li.parent a, 
+    #header #navigation ul.nav > li.parent a:before, 
+    #header #navigation ul.nav > li.parent a:after, 
+    /* LEVEL 2 */
+    #header #navigation ul.nav ul li a {
+        border: none;
+        border-radius: 0;
+        background-color: transparent;
+        color: rgb(0, 83, 94); /* @navColour */
+    }
+
+    /* Current && Hover - Cart and Nav */
+    #top ul.nav li:hover a, 
+    #top ul.nav li a:hover, 
+
+    #header #navigation ul.nav ul, 
+    #header #navigation ul.nav li:hover > a, 
+    #header #navigation ul.nav li a:hover, 
+
+    #header #navigation ul.nav li.current_page_item > a, 
+
+    #header #navigation ul.nav > li.parent a:hover:before, 
+    #header #navigation ul.nav > li.parent a:hover:after, 
+    #header #navigation ul.nav > li.parent:hover a:before, 
+    #header #navigation ul.nav > li.parent:hover a:after {
+        border: none;
+        border-radius: 0;
+        color: rgb(0, 51, 204); /* @contentBlue */
+        background: rgba(128, 213, 215,0.7); /* @bgrnavigation */
+    }
+
+    #header #navigation ul.nav > li.parent:hover a:before, 
+    #header #navigation ul.nav > li.parent:hover a:after {
+        background: transparent;
+    }
+
+    /* LEVEL 2 */
+    #header #navigation ul.nav ul {
+        border: none;
+        padding: 0;
+        box-shadow: 0 0.202em 0 0 rgba(227, 231, 232, 0.4);
+        -webkit-box-shadow: 0 0.202em 0 0 rgba(227, 231, 232, 0.4);
+    }
+
+    /* LEVEL 3 */
+    #header #navigation ul.nav ul ul {
+        top:  0.1em;
+    }
+
+
+
+  /* 3. MAIN NAVIGATION DROPDOWN MENUS (Add main navigation presentational styles here) src="/layout.css?ver3.5.2" */
+  #header #navigation {
+    clear: none;
+    display: block !important;
+    border: none;
+    margin: 0;
+    background: none;
+    box-shadow: none;
+    color: rgb(0, 83, 94); /* @navColour */
+  }
+
+  #header #navigation ul.nav {
+    float: left;
+    display: block;
+
+    /* LEVEL 2 */
+  
+    /* LEVEL 3 */
+  
+  }
+
+  ul.nav > li a {
+    color: rgb(0, 83, 94); /* @navColour */
+  }
+  #header #navigation ul.nav > li a {
+    font-weight: bold;
+    position: relative;
+  }
+
+  ul.nav ul, 
+  ul.nav li a:hover, 
+  ul.nav li.current_page_item > a {
+    border-color: none;
+    color: rgb(0, 83, 94) !important; /* @navColour */
+    background: rgba(128, 213, 215,0.7) !important; /* @bgrnavigation */
+  }
+
+  #header #navigation ul.nav > li.parent a {
+    -webkit-border-bottom-left-radius: 0;
+    -webkit-border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+  }
+  #header #navigation ul.nav > li.parent a:after {
+    font-family: 'WebSymbolsRegular';
+    display: inline-block;
+    font-size: .857em;
+    margin-left: .618em;
+    content: ";";
+    color: rgb(0, 83, 94); /* @navColour */
+    font-weight: normal;
+  }
+  #header #navigation ul.nav > li.parent a:hover:before {
+    content: "";
+    display: block;
+    height: 2px;
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    color: rgb(0, 83, 94); /* @navColour */
+    z-index: 99999;
+  }
+  #header #navigation ul.nav > li.parent:hover a:before {
+    content: "";
+    display: block;
+    height: 2px;
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    color: rgb(0, 83, 94); /* @navColour */
+    z-index: 99999;
+  }
+  #header #navigation ul.nav > li.parent:hover a:after {
+    color: rgb(0, 83, 94); /* @navColour */
+  }
+  #header #navigation ul.nav > li.parent ul li a:after {
+    visibility: hidden;
+  }
+  #header #navigation ul.nav > li.parent ul li.parent a:after {
+    visibility: visible;
+    content: "]";
+    float: right;
+  }
+  #header #navigation ul.nav > li.parent ul li.parent ul li a:after {
+    visibility: hidden;
+  }
+  #header #navigation ul.nav > li.parent ul li.parent ul li.parent a:after {
+    visibility: visible;
+    content: "]";
+  }
+  #header #navigation ul.nav > li.parent ul li.parent ul li.parent ul li a:after {
+    visibility: hidden;
+  }
+  #header #navigation ul.nav ul {
+    border: none;
+    margin-top: -1px;
+    padding: 0;
+    box-shadow: 0 0.202em 0 0 rgba(232, 228, 227, 0.4);
+    -webkit-box-shadow: 0 0.202em 0 0 rgba(232, 228, 227, 0.4);
+  }
+
+  #header #navigation ul.nav ul ul {
+    left: 100%;
+    margin-top: 0;
+  }
+
+  h3.nav-toggle {
+    display: none;
+  }
+

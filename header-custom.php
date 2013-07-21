@@ -13,7 +13,7 @@ if ( ! empty( $_SERVER['SCRIPT_FILENAME'] ) && basename( __FILE__ ) == basename(
  * @package WooFramework
  * @subpackage Template
  */
-global $woo_options, $woocommerce;
+global $woo_options, $woocommerce, $name;
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?> class="<?php if ( $woo_options['woo_boxed_layout'] == 'true' ) echo 'boxed'; ?> <?php if (!class_exists('woocommerce')) echo 'woocommerce-deactivated'; ?>">
 <head>
@@ -36,23 +36,45 @@ global $woo_options, $woocommerce;
 
 <div id="wrapper">
 
-
-
 	<div id="top">
-		<nav class="col-full" role="navigation">
-			<?php if ( function_exists( 'has_nav_menu' ) && has_nav_menu( 'top-menu' ) ) { ?>
-			<?php wp_nav_menu( array( 'depth' => 6, 'sort_column' => 'menu_order', 'container' => 'ul', 'menu_id' => 'top-nav', 'menu_class' => 'nav fl', 'theme_location' => 'top-menu' ) ); ?>
-			<?php } ?>
-			<?php
-				if ( class_exists( 'woocommerce' ) ) {
-					echo '<ul class="nav wc-nav">';
-					woocommerce_cart_link();
-					echo '<li class="checkout"><a href="'.esc_url($woocommerce->cart->get_checkout_url()).'">'.__('Checkout','woothemes').'</a></li>';
-					echo get_search_form();
-					echo '</ul>';
-				}
-			?>
-		</nav>
+        
+        <?php woo_nav_before(); ?>
+
+		<div class="col-full" >
+			<nav class="col-right" role="navigation">
+				<?php if ( function_exists( 'has_nav_menu' ) && has_nav_menu( 'top-menu' ) ) { ?>
+				<?php wp_nav_menu( array( 'depth' => 6, 'sort_column' => 'menu_order', 'container' => 'ul', 'menu_id' => 'top-nav', 'menu_class' => 'nav fl', 'theme_location' => 'top-menu' ) ); ?>
+				<?php } ?>
+				<?php
+					if ( class_exists( 'woocommerce' ) ) {
+						echo '<ul class="nav wc-nav">';
+						woocommerce_cart_link();
+						// echo '<li class="checkout"><a href="'.esc_url($woocommerce->cart->get_checkout_url()).'">'.__('Checkout','woothemes').'</a></li>';
+                        // echo ' <a href="' . get_permalink( woocommerce_get_page_id( 'myaccount' ) ) . '">' . __( 'Log in', 'woocommerce' ) . '</a>';
+						// echo get_search_form();
+						echo '</ul>';
+					}
+				?>
+	        </nav>
+	
+	        <nav id="navigation" class="col-left" role="navigation">
+	            <?php
+				if ( function_exists( 'has_nav_menu' ) && has_nav_menu( 'primary-menu' ) ) {
+					wp_nav_menu( array( 'depth' => 6, 'sort_column' => 'menu_order', 'container' => 'ul', 'menu_id' => 'main-nav', 'menu_class' => 'nav fr', 'theme_location' => 'primary-menu' ) );
+				} else {
+				?>
+		        <ul id="main-nav" class="nav fl">
+					<?php if ( is_page() ) $highlight = 'page_item'; else $highlight = 'page_item current_page_item'; ?>
+					<li class="<?php echo $highlight; ?>"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php _e( 'Home', 'woothemes' ); ?></a></li>
+					<?php wp_list_pages( 'sort_column=menu_order&depth=6&title_li=&exclude=' ); ?>
+				</ul><!-- /#nav -->
+		        <?php } ?>
+	
+			</nav><!-- /#navigation -->
+	
+		</div>
+		<?php woo_nav_after(); ?>
+
 	</div><!-- /#top -->
 
 
@@ -81,26 +103,6 @@ global $woo_options, $woocommerce;
 			<h3 class="nav-toggle"><a href="#navigation">&#9776; <span><?php _e('Navigation', 'woothemes'); ?></span></a></h3>
 
 		</hgroup>
-
-        <?php woo_nav_before(); ?>
-
-		<nav id="navigation" class="col-full" role="navigation">
-
-			<?php
-			if ( function_exists( 'has_nav_menu' ) && has_nav_menu( 'primary-menu' ) ) {
-				wp_nav_menu( array( 'depth' => 6, 'sort_column' => 'menu_order', 'container' => 'ul', 'menu_id' => 'main-nav', 'menu_class' => 'nav fr', 'theme_location' => 'primary-menu' ) );
-			} else {
-			?>
-	        <ul id="main-nav" class="nav fl">
-				<?php if ( is_page() ) $highlight = 'page_item'; else $highlight = 'page_item current_page_item'; ?>
-				<li class="<?php echo $highlight; ?>"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php _e( 'Home', 'woothemes' ); ?></a></li>
-				<?php wp_list_pages( 'sort_column=menu_order&depth=6&title_li=&exclude=' ); ?>
-			</ul><!-- /#nav -->
-	        <?php } ?>
-
-		</nav><!-- /#navigation -->
-
-		<?php woo_nav_after(); ?>
 
 	</header><!-- /#header -->
 

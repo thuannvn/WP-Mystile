@@ -53,164 +53,125 @@ TODO: Update to .less mixins
 
 
 @media only screen and (min-width: 768px) {
-    /* Desktop styles go here */
 
-
-/* 
-* 
-* GRID amends 
-* 
-*/
-
-    #main.fullwidth, .layout-full #main, 
-    .col-full, .no-sidebar #main {
-        padding: 0 2em;
-        max-width:  71em;
+    #content #main {
+        width:  94%;
+        padding: 1.5em 3% 0 3%;
     }
 
 
-
-	/* Positioning the Site Navigation - safty net for upgrades */
-    #header #navigation {
-        position: fixed; 
-        top: 0; left: 3.631em;
-        float:none;
-        margin: 0 auto; 
-        width: 100%;
-        min-width: 65em;
-        z-index: 999;
+    /* Header */
+    #header {
+        border-bottom: none;
+        margin-top: 3.631em;
     }
 
+
+	/* Navigation and Cart */
+    .admin-bar #top, 
     .admin-bar #header #navigation {
         top: 2em;
     }    
 
-
-    #header #navigation > ul {
-        padding-right: 12em; 
-    }
-
-    #header #top ul.nav { 
+    /* CART */
+    #top {
+        position: fixed;
+        left: 0; top: 0;
         width: 100%;
-        max-width: 18em; 
-        margin:  0 auto;
+        box-shadow: 0 0.202em 0 0 rgba(227, 231, 232, 0.4);
+        z-index: 99;
     }
 
+    #top ul.nav {
+        margin-right: 2em;
+    }
+    #top #navigation ul.nav {
+        margin-right: 0;
+    }
 
-  /* 3. MAIN NAVIGATION DROPDOWN MENUS (Add main navigation presentational styles here) src="/layout.css?ver3.5.2" */
-  #top #navigation {
-    clear: none;
-    display: block !important;
-    border: none;
-    margin: 0;
-    background: none;
-    box-shadow: none;
-    color: rgb(0, 83, 94); /* @navColour */
-  }
+    /* NAVIGATION - reset */
+    #navigation {
+        clear: none;
+        margin-bottom: 0;
+        display: block;
+    }
 
-  #top #navigation ul.nav {
-    float: left;
-    display: block;
+    /* NAVIGATION -=- Positioning Hacks -=- */
+    #header #navigation {
+        position: fixed; 
+        top: 0; left: 50%;
+        float: none;
+        margin: 0 auto; 
+        width: 75.998em;
+        z-index: 101;
+    }
+    #header #navigation > ul.nav {
+        position: absolute;
+        top: 0; left: -37em;
+        width: 100%;
+        max-width: 58em;
+        min-width: 56em;
+    }
+
+    /* CART && NAVIGATION */
+    ul.nav li a {
+        padding: 1.1em;
+    }
+
+    #top ul.nav li a,
+
+    #wrapper #navigation ul.nav > li a,
+    #wrapper #navigation ul.nav > li:hover a a, 
+    #wrapper #navigation ul.nav > li.parent a, 
+    #wrapper #navigation ul.nav > li.parent a:before, 
+    #wrapper #navigation ul.nav > li.parent a:after, 
+    /* LEVEL 2 */
+    #wrapper #navigation ul.nav ul li a {
+        border: none;
+        border-radius: 0;
+        background-color: transparent;
+        color: rgb(0, 83, 94); /* @navColour */
+    }
+
+    /* Current && Hover - Cart and Nav */
+    #top ul.nav li:hover a, 
+    #top ul.nav li a:hover, 
+
+    #wrapper #navigation ul.nav ul, 
+    #wrapper #navigation ul.nav li:hover > a, 
+    #wrapper #navigation ul.nav li a:hover, 
+
+    #wrapper #navigation ul.nav li.current_page_item > a, 
+
+    #wrapper #navigation ul.nav > li.parent a:hover:before, 
+    #wrapper #navigation ul.nav > li.parent a:hover:after, 
+    #wrapper #navigation ul.nav > li.parent:hover a:before, 
+    #wrapper #navigation ul.nav > li.parent:hover a:after {
+        border: none;
+        border-radius: 0;
+        color: rgb(0, 51, 204); /* @contentBlue */
+        background: rgba(128, 213, 215,0.7); /* @bgrnavigation */
+    }
+
+    #wrapper #navigation ul.nav > li.parent:hover a:before, 
+    #wrapper #navigation ul.nav > li.parent:hover a:after {
+        background: transparent;
+    }
 
     /* LEVEL 2 */
-  
+    #wrapper #navigation ul.nav ul {
+        border: none;
+        padding: 0;
+        box-shadow: 0 0.202em 0 0 rgba(227, 231, 232, 0.4);
+        -webkit-box-shadow: 0 0.202em 0 0 rgba(227, 231, 232, 0.4);
+    }
+
     /* LEVEL 3 */
-  
-  }
+    #wrapper #navigation ul.nav ul ul {
+        top:  0.1em;
+    }
 
-  #top ul.nav > li a {
-    color: rgb(0, 83, 94); /* @navColour */
-  }
-  #top #navigation ul.nav > li a {
-    font-weight: bold;
-    position: relative;
-  }
 
-  ul.nav ul, 
-  ul.nav li a:hover, 
-  ul.nav li.current_page_item > a {
-    border-color: none;
-    color: rgb(0, 83, 94); /* @navColour */
-    background: rgba(128, 213, 215,0.7) !important; /* @bgrnavigation */
-  }
-
-  #top #navigation ul.nav > li.parent a {
-    -webkit-border-bottom-left-radius: 0;
-    -webkit-border-bottom-right-radius: 0;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-    -moz-background-clip: padding;
-    -webkit-background-clip: padding-box;
-    background-clip: padding-box;
-  }
-  #top #navigation ul.nav > li.parent a:after {
-    font-family: 'WebSymbolsRegular';
-    display: inline-block;
-    font-size: .857em;
-    margin-left: .618em;
-    content: ";";
-    color: rgb(0, 83, 94); /* @navColour */
-    font-weight: normal;
-  }
-  #top #navigation ul.nav > li.parent a:hover:before {
-    content: "";
-    display: block;
-    height: 2px;
-    position: absolute;
-    bottom: -1px;
-    left: 0;
-    right: 0;
-    color: rgb(0, 83, 94); /* @navColour */
-    z-index: 99999;
-  }
-  #top #navigation ul.nav > li.parent:hover a:before {
-    content: "";
-    display: block;
-    height: 2px;
-    position: absolute;
-    bottom: -1px;
-    left: 0;
-    right: 0;
-    color: rgb(0, 83, 94); /* @navColour */
-    z-index: 99999;
-  }
-  #top #navigation ul.nav > li.parent:hover a:after {
-    color: rgb(0, 83, 94); /* @navColour */
-  }
-  #top #navigation ul.nav > li.parent ul li a:after {
-    visibility: hidden;
-  }
-  #top #navigation ul.nav > li.parent ul li.parent a:after {
-    visibility: visible;
-    content: "]";
-    float: right;
-  }
-  #top #navigation ul.nav > li.parent ul li.parent ul li a:after {
-    visibility: hidden;
-  }
-  #top #navigation ul.nav > li.parent ul li.parent ul li.parent a:after {
-    visibility: visible;
-    content: "]";
-  }
-  #top #navigation ul.nav > li.parent ul li.parent ul li.parent ul li a:after {
-    visibility: hidden;
-  }
-  #top #navigation ul.nav ul {
-    border: none;
-    margin-top: -1px;
-    padding: 0;
-    box-shadow: 0 0.202em 0 0 rgba(232, 228, 227, 0.4);
-    -webkit-box-shadow: 0 0.202em 0 0 rgba(232, 228, 227, 0.4);
-  }
-
-  #top #navigation ul.nav ul ul {
-    left: 100%;
-    margin-top: 0;
-  }
-
-  h3.nav-toggle {
-    display: none;
-  }
 
 
 
@@ -221,42 +182,45 @@ TODO: Update to .less mixins
 */
 
 
-   /* Hiding Checkout and Product Search in the Header */
-    #top .nav .checkout a { display: none; } 
+   /* hiding CHECKOUT Link and Product SEARCH in the Header */
+    #top .nav .checkout a 
+    /*, #top .nav .search */ { 
+        display: none; 
+    } 
 
     #top .wc-nav li.cart a {
         position: relative;
     }
 
-    #top .wc-nav li.cart a .contents {
-        position: absolute;
-        top:  8px; left: 22px;
-        margin: 0;
-        padding: 0;
-        line-height: 1.2em;
-        background: none;
-    }
-
-    #top .wc-nav li.cart a .contents sup {
-        background-color: #fff;
-        border-radius: 1.2em;
-        padding: 0.5em;
-    }
-
-
     #top .wc-nav li.cart a .amount {
         margin-left:  .5em;
     }
 
+    /* ITEMS IN CART */
+    #top .wc-nav li.cart a .contents {
+        display: block;
+        overflow: hidden;
+        position: absolute;
+        top: 8px; left: 0;
+        margin: 0;
+        padding: 0;
+        width: 2em;
+        height: 1em;
+        line-height: 1.2em;
+        background: transparent;
+    }
 
 
-    /* Updating Product lists width */
+
+    /* RPODUCT LISTS width */
      ul.products li.product {
         width: 88.05%;
         text-align: left;
       }
 
-    /* Search Form and button */
+
+
+    /* SEATCH */
     .search_main .field.s { display: inline; width:  70%; }
     .search_main #searchsubmit { display: none; width: 25%; }
 
@@ -292,9 +256,12 @@ TODO: Update to .less mixins
         /*background: rgba(252, 252, 252,.2);*/
     }
 
-    #top, #content { 
-        position: relative;
+    #top { 
         background: rgba(128, 213,215,0.7) ;
+    }
+
+    #content {
+        background: rgba(255, 255, 255, 0.85);
     }
 
 
@@ -306,22 +273,6 @@ TODO: Update to .less mixins
 	h1, h2, h3 {
 		color: rgb(0, 51, 204); 
 	}
-
-
-    /* Header */
-    #header {
-        border-bottom: none;
-    }
-
-
-    /* Navigation */
-    #header #navigation ul.nav > li a,
-    #header #navigation ul.nav ul li a,
-    #header #navigation ul.nav > li a:hover,
-    #header #navigation ul.nav ul li a:hover {
-        border: none;
-        background: none;
-    }
 
 
     .post .post-meta li a, .type-page .post-meta li a {

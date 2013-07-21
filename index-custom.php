@@ -13,9 +13,7 @@ if ( ! function_exists( 'wp' ) && ! empty( $_SERVER['SCRIPT_FILENAME'] ) && base
  * @package WooFramework
  * @subpackage Template
  */
-
-    get_header();
-	//get_header('custom');
+	get_header('custom');
 	global $woo_options;
 	
 ?>

@@ -213,11 +213,20 @@ TODO: Update to .less mixins
 
 
     /* RPODUCT LISTS width */
-     ul.products li.product {
-        width: 88.05%;
+    ul.products li.product {
+        width: 98%;
         text-align: left;
-      }
+    }
 
+   ul.products li.product img {
+        margin: auto 1em 1em auto;
+        max-width:  150px;
+        float: left;
+    }
+
+    ul.products .star-rating {
+        margin: .5em;
+    }
 
 
     /* SEATCH */
@@ -234,7 +243,7 @@ TODO: Update to .less mixins
     }
 
     .page-background {
-        /*background: url(/wp-content/uploads/2013/07/beautiful-purple-orange-butterfly-252250.jpg) no-repeat top left;*/
+        /*background-image: url(/wp-content/uploads/2013/08/background-green-leaf.jpg), url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAG0lEQVQIW2NkYGAwBuKzQAwGjDAGNgGwSgwVAFCGAgUGpiTrAAAAAElFTkSuQmCC);*/
         background-image: url(http://www.zfdesign.net/zfd-work/RobertRussell/TAG/WordPress/MystyleWT/wp-content/uploads/2013/07/beautiful-purple-orange-butterfly-252250.jpg), url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAG0lEQVQIW2NkYGAwBuKzQAwGjDAGNgGwSgwVAFCGAgUGpiTrAAAAAElFTkSuQmCC);
         background-repeat:  no-repeat, repeat;
         background-position:  top left, top left;
@@ -250,14 +259,47 @@ TODO: Update to .less mixins
         top: 0;
         left: 0;
         opacity: 1;
+        -webkit-transition: top 1s ease-in;
+           -moz-transition: top 1s ease-in;
+             -o-transition: top 1s ease-in;
+                transition: top 1s ease-in;
     }
-    body[class*="scroll1"] .page-background { opacity: .8; top: -20%; }
-    body[class*="scroll2"] .page-background { opacity: .6; top: -40%; }
-    body[class*="scroll3"] .page-background { opacity: .4; top: -60%; }
-    body[class*="scroll4"] .page-background { opacity: .2; top: -80%; }
+    body[class*="scroll1"] .page-background { 
+        opacity: .8; top: -20%; 
+        -webkit-transition: top .75s ease-out;
+           -moz-transition: top .75s ease-out;
+             -o-transition: top .75s ease-out;
+                transition: top .75s ease-out;
+    }
+    body[class*="scroll2"] .page-background { 
+        opacity: .6; top: -40%; 
+        -webkit-transition: top .75s ease-out;
+           -moz-transition: top .75s ease-out;
+             -o-transition: top .75s ease-out;
+                transition: top .75s ease-out;
+    }
+    body[class*="scroll3"] .page-background { 
+        opacity: .4; top: -60%; 
+        -webkit-transition: top .75s ease-out;
+           -moz-transition: top .75s ease-out;
+             -o-transition: top .75s ease-out;
+                transition: top .75s ease-out;
+    }
+    body[class*="scroll4"] .page-background { 
+        opacity: .2; top: -80%; 
+        -webkit-transition: top .75s ease-out;
+           -moz-transition: top .75s ease-out;
+             -o-transition: top .75s ease-out;
+                transition: top .75s ease-out;
+    }
     body[class*="scroll5"] .page-background, body[class*="scroll6"] .page-background,
     body[class*="scroll7"] .page-background, body[class*="scroll8"] .page-background,
-    body[class*="scroll9"] .page-background { opacity: 0; top: -100%; }
+    body[class*="scroll9"] .page-background { opacity: 0; top: -100%; 
+        -webkit-transition: top .75s ease-out;
+           -moz-transition: top .75s ease-out;
+             -o-transition: top .75s ease-out;
+                transition: top .75s ease-out;
+    }
 
 
     #wrapper {

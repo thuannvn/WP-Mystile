@@ -54,11 +54,22 @@ TODO: Update to .less mixins
 
 @media only screen and (min-width: 768px) {
 
-    #content #main {
+    /* ".layout-full" */
+    .layout-full #content #main {
         width:  94%;
         padding: 1.5em 3% 0 3%;
     }
 
+    /* ".layout-left-content" && ".layout-right-content" */
+    .layout-left-content #content #main, 
+    .layout-right-content #content #main {
+        width:  69.2%;
+        padding: 1.5em 3% 0 3%;
+    }
+
+    #sidebar {
+        margin-top: 3em;
+    }
 
     /* Header */
     #header {
@@ -212,13 +223,13 @@ TODO: Update to .less mixins
 
 
 
-    /* RPODUCT LISTS width */
-    ul.products li.product {
+    /* RPODUCT LISTS ".layout-full" width */
+    .layout-full ul.products li.product {
         width: 98%;
         text-align: left;
     }
 
-   ul.products li.product img {
+   .layout-full ul.products li.product img {
         margin: auto 1em 1em auto;
         max-width:  150px;
         float: left;
@@ -227,6 +238,23 @@ TODO: Update to .less mixins
     ul.products .star-rating {
         margin: .5em;
     }
+
+
+    /* RPODUCT LISTS ".layout-left-content" width */
+    .layout-left-content ul.products li.product,
+    .layout-right-content ul.products li.product {
+        width: 98%;
+        text-align: left;
+    }
+
+   .layout-left-content ul.products li.product img, 
+   .layout-right-content ul.products li.product img {
+        margin: auto 1em 1em auto;
+        max-width:  150px;
+        float: left;
+    }
+
+
 
 
     /* SEATCH */
@@ -244,7 +272,7 @@ TODO: Update to .less mixins
 
     .page-background {
         /*background-image: url(/wp-content/uploads/2013/08/background-green-leaf.jpg), url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAG0lEQVQIW2NkYGAwBuKzQAwGjDAGNgGwSgwVAFCGAgUGpiTrAAAAAElFTkSuQmCC);*/
-        background-image: url(http://www.zfdesign.net/zfd-work/RobertRussell/TAG/WordPress/MystyleWT/wp-content/uploads/2013/07/beautiful-purple-orange-butterfly-252250.jpg), url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAG0lEQVQIW2NkYGAwBuKzQAwGjDAGNgGwSgwVAFCGAgUGpiTrAAAAAElFTkSuQmCC);
+        background-image: url(http://www.zfdesign.net/zfd-work/RobertRussell/TAG/WordPress/MystyleWT/wp-content/uploads/2013/07/background-green-leaf.jpg), url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAG0lEQVQIW2NkYGAwBuKzQAwGjDAGNgGwSgwVAFCGAgUGpiTrAAAAAElFTkSuQmCC);
         background-repeat:  no-repeat, repeat;
         background-position:  top left, top left;
         min-height: 80%;
@@ -315,16 +343,26 @@ TODO: Update to .less mixins
         background: rgba(255, 255, 255, 0.85);
     }
 
+    
+    a, a h3
+     {
+        color: rgb(0, 83, 94);
+    }
 
     /* Basket Navigation */
-    #top ul.nav > li a:hover { 
+    a:hover, #top ul.nav > li a:hover, 
+    ul.products li.product a:hover h3 { 
         color: rgb(0, 51, 204); 
     }
     
-	h1, h2, h3 {
+
+
+	h1, h2 {
 		color: rgb(0, 51, 204); 
 	}
-
+    h3 {
+        color: rgb(0, 153, 0);
+    }
 
     .post .post-meta li a, .type-page .post-meta li a {
         color:  #0093dd;

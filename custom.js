@@ -8,7 +8,7 @@ var toggleBodyClass = function (scrlPos) {
     document.body.className += " scroll" + scrlPos;
 };
 window.onscroll = function (e) {
-    //console.log(window.scrollY);
-    toggleBodyClass(window.scrollY);
+    console.log(window.pageYOffset);
+    toggleBodyClass(window.pageYOffset);
 }
 

@@ -75,7 +75,7 @@ TODO: Update to .less mixins
     }
 
     #sidebar {
-        margin-top: 3em;
+        margin: 3em 1em 0 0;
     }
 
 
@@ -91,6 +91,7 @@ TODO: Update to .less mixins
         margin-top: 1.618em;
     }
 
+    /* Footer */
     .footer-wrap section > div:first-child {
         padding-left: 1em;
     }
@@ -110,6 +111,26 @@ TODO: Update to .less mixins
     }
 
 
+    /* #top .nav .amount, * /
+    #top .nav .checkout a, 
+    #top .nav .search {
+      display: none;
+    }
+    #header #navigation {
+      position: absolute; 
+      top: 0; left: 0;
+      float:none;
+    }
+
+     ul.products li.product {
+        width: 88.05%;
+        text-align: left;
+      }
+
+    .search_main .field.s { display: inline }
+
+    .search_main #searchsubmit { display: none; }
+
 
     /* CART */
     #top {
@@ -121,26 +142,33 @@ TODO: Update to .less mixins
     }
 
     #top ul.nav {
-        margin-right: 2em;
+        margin-right: .5em;
         float: right;
     }
 
-    #top #top-nav {
+
+    /* User Account */
+    #top #top-nav > li > a {
+        position: relative;
+        padding-left: 22px;
     }
 
-    #top #navigation ul.nav {
-        margin-right: 0;
+    #top #top-nav > li > a:before {
+        position: absolute;
+        top: 16px; left: 2px;
+
+        font-family: 'WebSymbolsRegular';
+        font-size: 1em;
+        font-weight: normal;
+        content: "U"
     }
 
-    /* NAVIGATION - reset */
-    #navigation {
-        clear: none;
-        margin-bottom: 0;
-        display: block;
-    }
 
-    /* NAVIGATION -=- Positioning Hacks -=- */
+
+    /* SITE NAVIGATION */
     #header #navigation {
+        clear: none;
+        display: block;
         position: absolute; 
         top: 0; left: 0;
         float: none;
@@ -148,10 +176,12 @@ TODO: Update to .less mixins
         width: 100%;
         z-index: 101;
     }
+
     #header #navigation > ul.nav {
         float: none;
         width: 75.998em;
     }
+
 
     /* CART && NAVIGATION */
     ul.nav li a {
@@ -224,8 +254,8 @@ TODO: Update to .less mixins
 
 
    /* hiding CHECKOUT Link and Product SEARCH in the Header */
-    #top .nav .checkout a
-    /*, #top .nav .search */ { 
+    #top .nav .checkout a, 
+    #top .nav .search { 
         display: none; 
     } 
 
@@ -233,11 +263,12 @@ TODO: Update to .less mixins
         position: relative;
     }
 
+/*
     #top .wc-nav li.cart a .amount {
         margin-left:  .5em;
     }
-
-    /* ITEMS IN CART */
+*/
+    /* ITEMS IN CART * /
     #top .wc-nav li.cart a .contents {
         display: block;
         overflow: hidden;
@@ -250,9 +281,9 @@ TODO: Update to .less mixins
         line-height: 1.2em;
         background: transparent;
     }
+*/
 
-
-    /* RPODUCT LISTS ".layout-full" width */
+    /* RPODUCT LISTS ".layout-full" width * /
     .layout-full ul.products li.product {
         width: 98%;
         text-align: left;
@@ -267,9 +298,9 @@ TODO: Update to .less mixins
     ul.products .star-rating {
         margin: .5em;
     }
+*/
 
-
-    /* RPODUCT LISTS ".layout-left-content" width */
+    /* RPODUCT LISTS ".layout-left-content" width * /
     .layout-left-content ul.products li.product,
     .layout-right-content ul.products li.product {
         width: 98%;
@@ -282,12 +313,13 @@ TODO: Update to .less mixins
         max-width:  150px;
         float: left;
     }
+*/
 
 
-    /* SEARCH */
+    /* SEARCH * /
     .search_main .field.s { display: inline; width:  70%; }
     .search_main #searchsubmit { display: none; width: 25%; }
-
+*/
 
 
 

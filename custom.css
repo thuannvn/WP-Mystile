@@ -67,9 +67,8 @@ TODO: Update to .less mixins
         padding: 1.5em 3% 0 3%;
     }
 
-    /* ".layout-left-content" && ".layout-right-content" */
-    .layout-left-content #content #main, 
-    .layout-right-content #content #main {
+    /* Main Content area */
+    #content #main {
         width:  69.2%;
         padding: 1.5em 3% 0 3%;
     }
@@ -100,6 +99,11 @@ TODO: Update to .less mixins
         width:  21.5%;
     }
 
+    /* Footer Search */
+    #footer-widgets .searchform input {
+        display:  inline-block;
+        max-width: 52%;
+    }
 
 	/* Navigation and Cart */
     .admin-bar #top {

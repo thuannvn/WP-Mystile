@@ -42,7 +42,7 @@ TODO: Update to .less mixins
 @headingGreen: 	@contentGreen;
 
 // Buttons and Navigation
-@bgrnavigation: rgba(128, 213,215,0.7); // 
+@bgrnavigation: rgba(253, 253, 253, 0.47); // 
 @navColour: 	rgb(0, 83, 94); 		// #00535E
 
 @buttonColor:   rgba(0,0,0,0.2);
@@ -81,8 +81,9 @@ TODO: Update to .less mixins
     /* Header */
     #header {
         border-bottom: none;
-        margin-top: 3.631em;
+        margin-top: 2.231em;
         margin-bottom: 0;
+        padding-top: 5.631em;
     }
 
     #header hgroup {
@@ -150,6 +151,9 @@ TODO: Update to .less mixins
         float: right;
     }
 
+    #top ul.nav > li > a {
+        padding: .5em 1em;
+    }
 
     /* User Account */
     #top #top-nav > li > a {
@@ -159,8 +163,7 @@ TODO: Update to .less mixins
 
     #top #top-nav > li > a:before {
         position: absolute;
-        top: 16px; left: 2px;
-
+        top: .5em; left: 2px;
         font-family: 'WebSymbolsRegular';
         font-size: 1em;
         font-weight: normal;
@@ -224,7 +227,7 @@ TODO: Update to .less mixins
         border: none;
         border-radius: 0;
         color: rgb(0, 51, 204); /* @contentBlue */
-        background: rgba(128, 213, 215,0.7); /* @bgrnavigation */
+        background: rgba(253, 253, 253, 0.47); /* @bgrnavigation */
     }
 
     #wrapper #navigation ul.nav > li.parent:hover a:before, 
@@ -242,6 +245,7 @@ TODO: Update to .less mixins
 
     /* My Account LEVEL 2 */
     ul.nav ul {
+        width: 16.379em;
         left: initial;
         right: 0;
     }
@@ -264,7 +268,7 @@ TODO: Update to .less mixins
     } 
 
     #top .wc-nav li.cart a {
-        position: relative;
+        padding-top: .5em;
     }
 
 /*
@@ -403,8 +407,34 @@ TODO: Update to .less mixins
     }
 
     #header #navigation {
-        background: rgba(128, 213, 215, 0.7);
+        background: rgba(253, 253, 253, 0.47);
     }
+
+    #header #navigation .nav > li:first-child {
+        position: relative;
+        min-width: 54px;
+        height: auto;
+        overflow: hidden;
+    }
+    #header #navigation .nav > li:first-child a {
+        margin-left: -999px;
+    }
+
+    #header #navigation .nav > li:first-child a:before {
+        position: absolute;
+        left: 1016px; 
+        top: 1.1em; /* Same as "ul.nav li a" padding */
+        content: "";        
+        width: 20px;
+        height: 20px; 
+        background: url("./images/home-nav-sprite.gif") scroll no-repeat 0 -26px;
+    }
+
+    #header #navigation .nav > li:first-child a:hover:before,
+    .home #header #navigation .nav > li.current_page_item a:before {
+        background-position: 0 0;
+    }
+
 
     #content, .footer-wrap section {
         background: rgba(255, 255, 255, 0.85);

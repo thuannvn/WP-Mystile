@@ -42,7 +42,7 @@ TODO: Update to .less mixins
 @headingGreen: 	@contentGreen;
 
 // Buttons and Navigation
-@bgrnavigation: rgba(128, 213,215,0.7); // 
+@bgrnavigation: rgba(253, 253, 253, 0.47); // 
 @navColour: 	rgb(0, 83, 94); 		// #00535E
 
 @buttonColor:   rgba(0,0,0,0.2);
@@ -57,80 +57,14 @@ TODO: Update to .less mixins
 
 /*
 **
-** // layout.css
+** LAYOUT
 ** 
 */
 
-    /* ".layout-full" */
-    .layout-full #content #main {
-        width:  94%;
-        padding: 1.5em 3% 0 3%;
-    }
-
-    /* ".layout-left-content" && ".layout-right-content" */
-    .layout-left-content #content #main, 
-    .layout-right-content #content #main {
-        width:  69.2%;
-        padding: 1.5em 3% 0 3%;
-    }
-
-    #sidebar {
-        margin: 3em 1em 0 0;
-    }
-
-
-    /* Header */
-    #header {
-        border-bottom: none;
-        margin-top: 3.631em;
-        margin-bottom: 0;
-    }
-
-    #header hgroup {
-        margin-bottom: 0;
-        margin-top: 1.618em;
-    }
-
-    /* Footer */
-    .footer-wrap section > div:first-child {
-        padding-left: 1em;
-    }
-
-    #footer-widgets.col-4 .block {
-        width:  21.5%;
-    }
-
-
-	/* Navigation and Cart */
-    .admin-bar #top {
+	/* NAVIGATION AND CART */
+    .admin-bar #top { /* admin bar visible */
         top: 2em;
     }
-
-    .admin-bar #header #navigation {
-        /*top: 2em;*/
-    }
-
-
-    /* #top .nav .amount, * /
-    #top .nav .checkout a, 
-    #top .nav .search {
-      display: none;
-    }
-    #header #navigation {
-      position: absolute; 
-      top: 0; left: 0;
-      float:none;
-    }
-
-     ul.products li.product {
-        width: 88.05%;
-        text-align: left;
-      }
-
-    .search_main .field.s { display: inline }
-
-    .search_main #searchsubmit { display: none; }
-
 
     /* CART */
     #top {
@@ -146,8 +80,13 @@ TODO: Update to .less mixins
         float: right;
     }
 
+    #top ul.nav li a,
+    #top .wc-nav li.cart a {
+        padding: .5em;
+    }
 
-    /* User Account */
+
+    /* USER ACCOUNT */
     #top #top-nav > li > a {
         position: relative;
         padding-left: 22px;
@@ -155,7 +94,7 @@ TODO: Update to .less mixins
 
     #top #top-nav > li > a:before {
         position: absolute;
-        top: 16px; left: 2px;
+        top: 5px; left: 2px;
 
         font-family: 'WebSymbolsRegular';
         font-size: 1em;
@@ -163,6 +102,18 @@ TODO: Update to .less mixins
         content: "U"
     }
 
+
+    /* HEADER */
+    #header {
+        border-bottom: none;
+        margin-top: 2.231em;
+        margin-bottom: 0;
+    }
+
+    #header hgroup {
+        margin-bottom: 0;
+        margin-top: 1.618em;
+    }
 
 
     /* SITE NAVIGATION */
@@ -220,7 +171,7 @@ TODO: Update to .less mixins
         border: none;
         border-radius: 0;
         color: rgb(0, 51, 204); /* @contentBlue */
-        background: rgba(128, 213, 215,0.7); /* @bgrnavigation */
+        background: rgba(253, 253, 253, 0.47); /* @bgrnavigation */
     }
 
     #wrapper #navigation ul.nav > li.parent:hover a:before, 
@@ -238,6 +189,7 @@ TODO: Update to .less mixins
 
     /* My Account LEVEL 2 */
     ul.nav ul {
+		width: 16.379em;
         left: initial;
         right: 0;
     }
@@ -263,182 +215,278 @@ TODO: Update to .less mixins
         position: relative;
     }
 
+
+
+    /* PAGE CONTENT */
+    /* ".layout-full" */
+    .layout-full #content #main {
+        width:  94%;
+        padding: 1.5em 3% 0 3%;
+    }
+
+    /* ".layout-left-content" && ".layout-right-content" */
+    .layout-left-content #content #main, 
+    .layout-right-content #content #main {
+        width:  69.2%;
+        padding: 1.5em 3% 0 3%;
+    }
+
+    #sidebar {
+        margin: 3em 1em 0 0;
+    }
+
+
+    /* FOOTER */
+    .footer-wrap section > div:first-child {
+        padding-left: 1em;
+    }
+
+    #footer-widgets.col-4 .block {
+        width:  21.5%;
+    }
+
+
+
+    /* PRODUCTS */
+    .single-product .images {
+        width: 29%;
+    }
+
+    .single-product .summary {
+        width: 69%;
+    }
+
+    ul.products li.product img {
+        width: 80%;
+    }
+
+    /* TODO: add a badge icon with type of product */
+
+
+
+
+
+
 /*
-    #top .wc-nav li.cart a .amount {
-        margin-left:  .5em;
-    }
-*/
-    /* ITEMS IN CART * /
-    #top .wc-nav li.cart a .contents {
-        display: block;
-        overflow: hidden;
-        position: absolute;
-        top: 8px; left: 0;
-        margin: 0;
-        padding: 0;
-        width: 2em;
-        height: 1em;
-        line-height: 1.2em;
-        background: transparent;
-    }
+**
+** COLOURS
+** 
 */
 
-    /* RPODUCT LISTS ".layout-full" width * /
-    .layout-full ul.products li.product {
-        width: 98%;
-        text-align: left;
-    }
+	body {
+		background-color: rgb(182, 213, 215); /* @bgrPage: */
+	}
 
-   .layout-full ul.products li.product img {
-        margin: auto 1em 1em auto;
-        max-width: 150px;
-        float: left;
-    }
-
-    ul.products .star-rating {
-        margin: .5em;
-    }
-*/
-
-    /* RPODUCT LISTS ".layout-left-content" width * /
-    .layout-left-content ul.products li.product,
-    .layout-right-content ul.products li.product {
-        width: 98%;
-        text-align: left;
-    }
-
-   .layout-left-content ul.products li.product img, 
-   .layout-right-content ul.products li.product img {
-        margin: auto 1em 1em auto;
-        max-width:  150px;
-        float: left;
-    }
-*/
-
-
-    /* SEARCH * /
-    .search_main .field.s { display: inline; width:  70%; }
-    .search_main #searchsubmit { display: none; width: 25%; }
-*/
-
-
-
-
-    /* COLOURS */
-    body {
-        background-color: rgb(182, 213, 215); /* @bgrPage: */
-    }
-
-    .page-background {
-        /*background-image: url(/wp-content/uploads/2013/08/background-green-leaf.jpg), url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAG0lEQVQIW2NkYGAwBuKzQAwGjDAGNgGwSgwVAFCGAgUGpiTrAAAAAElFTkSuQmCC);*/
-        background-image: url(http://www.zfdesign.net/zfd-work/RobertRussell/TAG/WordPress/MystyleWT/wp-content/uploads/2013/07/background-green-leaf.jpg), url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAG0lEQVQIW2NkYGAwBuKzQAwGjDAGNgGwSgwVAFCGAgUGpiTrAAAAAElFTkSuQmCC);
-        background-repeat:  no-repeat, repeat;
-        background-position:  top left, top left;
-        min-height: 80%;
-        min-width: 1024px;
-	
-        /* Set up proportionate scaling */
-        width: 100%;
-        height: auto;
-	
-        /* Set up positioning */
-        position: fixed;
-        top: 0;
-        left: 0;
-        opacity: 1;
-        -webkit-transition: top 1s ease-in;
-           -moz-transition: top 1s ease-in;
-             -o-transition: top 1s ease-in;
-                transition: top 1s ease-in;
-    }
-    body[class*="scroll1"] .page-background { 
-        opacity: .8; top: -20%; 
-        -webkit-transition: top .75s ease-out;
-           -moz-transition: top .75s ease-out;
-             -o-transition: top .75s ease-out;
-                transition: top .75s ease-out;
-    }
-    body[class*="scroll2"] .page-background { 
-        opacity: .6; top: -40%; 
-        -webkit-transition: top .75s ease-out;
-           -moz-transition: top .75s ease-out;
-             -o-transition: top .75s ease-out;
-                transition: top .75s ease-out;
-    }
-    body[class*="scroll3"] .page-background { 
-        opacity: .4; top: -60%; 
-        -webkit-transition: top .75s ease-out;
-           -moz-transition: top .75s ease-out;
-             -o-transition: top .75s ease-out;
-                transition: top .75s ease-out;
-    }
-    body[class*="scroll4"] .page-background { 
-        opacity: .2; top: -80%; 
-        -webkit-transition: top .75s ease-out;
-           -moz-transition: top .75s ease-out;
-             -o-transition: top .75s ease-out;
-                transition: top .75s ease-out;
-    }
-    body[class*="scroll5"] .page-background, body[class*="scroll6"] .page-background,
-    body[class*="scroll7"] .page-background, body[class*="scroll8"] .page-background,
-    body[class*="scroll9"] .page-background { opacity: 0; top: -100%; 
-        -webkit-transition: top .75s ease-out;
-           -moz-transition: top .75s ease-out;
-             -o-transition: top .75s ease-out;
-                transition: top .75s ease-out;
-    }
+	.page-background {
+		/*background-image: url(/wp-content/uploads/2013/08/background-green-leaf.jpg), url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAG0lEQVQIW2NkYGAwBuKzQAwGjDAGNgGwSgwVAFCGAgUGpiTrAAAAAElFTkSuQmCC);*/
+		background-image: url(http://www.zfdesign.net/zfd-work/RobertRussell/TAG/WordPress/MystyleWT/wp-content/uploads/2013/07/background-green-leaf.jpg), url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAG0lEQVQIW2NkYGAwBuKzQAwGjDAGNgGwSgwVAFCGAgUGpiTrAAAAAElFTkSuQmCC);
+		background-repeat:  no-repeat, repeat;
+		background-position:  top left, top left;
+		min-height: 80%;
+		min-width: 1024px;
+		
+		/* Set up proportionate scaling */
+		width: 100%;
+		height: auto;
+		
+		/* Set up positioning */
+		position: fixed;
+		top: 0;
+		left: 0;
+		opacity: 1;
+		-webkit-transition: top 1s ease-in;
+			-moz-transition: top 1s ease-in;
+				-o-transition: top 1s ease-in;
+				transition: top 1s ease-in;
+	}
+	body[class*="scroll1"] .page-background { 
+		opacity: .8; top: -20%; 
+		-webkit-transition: top .75s ease-out;
+			-moz-transition: top .75s ease-out;
+				-o-transition: top .75s ease-out;
+				transition: top .75s ease-out;
+	}
+	body[class*="scroll2"] .page-background { 
+		opacity: .6; top: -40%; 
+		-webkit-transition: top .75s ease-out;
+			-moz-transition: top .75s ease-out;
+				-o-transition: top .75s ease-out;
+				transition: top .75s ease-out;
+	}
+	body[class*="scroll3"] .page-background { 
+		opacity: .4; top: -60%; 
+		-webkit-transition: top .75s ease-out;
+			-moz-transition: top .75s ease-out;
+				-o-transition: top .75s ease-out;
+				transition: top .75s ease-out;
+	}
+	body[class*="scroll4"] .page-background { 
+		opacity: .2; top: -80%; 
+		-webkit-transition: top .75s ease-out;
+			-moz-transition: top .75s ease-out;
+				-o-transition: top .75s ease-out;
+				transition: top .75s ease-out;
+	}
+	body[class*="scroll5"] .page-background, body[class*="scroll6"] .page-background,
+	body[class*="scroll7"] .page-background, body[class*="scroll8"] .page-background,
+	body[class*="scroll9"] .page-background { opacity: 0; top: -100%; 
+		-webkit-transition: top .75s ease-out;
+			-moz-transition: top .75s ease-out;
+				-o-transition: top .75s ease-out;
+				transition: top .75s ease-out;
+	}
 
 
-    #wrapper {
+	#wrapper {
+		position: relative;
+		/*background: rgba(252, 252, 252,.2);*/
+	}
+
+	#top {
+		background: rgba(255, 255, 255, 0.85); 
+	}
+
+	#header #navigation {
+		background: rgba(128, 213, 215, 0.7);
+	}
+
+
+    /* HOME Icon */
+    #header #navigation .nav > li:first-child {
         position: relative;
-        /*background: rgba(252, 252, 252,.2);*/
+        min-width: 54px;
+        height: auto;
+        overflow: hidden;
+    }
+    #header #navigation .nav > li:first-child a {
+        margin-left: -999px;
+    }
+	
+    #header #navigation .nav > li:first-child a:before {
+        position: absolute;
+        left: 1016px; 
+        top: 1.1em; /* Same as "ul.nav li a" padding */
+        content: "";        
+        width: 20px;
+        height: 20px; 
+        background: url("./images/home-nav-sprite.gif") scroll no-repeat 0 -26px;
     }
 
-    #top {
-        background: rgba(255, 255, 255, 0.85); 
+    #header #navigation .nav > li:first-child a:hover:before,
+    .home #header #navigation .nav > li.current_page_item a:before {
+        background-position: 0 0;
     }
+	#content, .footer-wrap section {
+		background: rgba(255, 255, 255, 0.85);
+	}
 
-    #header #navigation {
-        background: rgba(128, 213, 215, 0.7);
-    }
+		
+	a, a h3
+		{
+		color: rgb(0, 83, 94);
+	}
 
-    #content, .footer-wrap section {
-        background: rgba(255, 255, 255, 0.85);
-    }
-
-    
-    a, a h3
-     {
-        color: rgb(0, 83, 94);
-    }
-
-    /* Basket Navigation */
-    a:hover, #top ul.nav > li a:hover, 
-    ul.products li.product a:hover h3 { 
-        color: rgb(0, 51, 204); 
-    }navigation
-    
+	/* Basket Navigation */
+	a:hover, #top ul.nav > li a:hover, 
+	ul.products li.product a:hover h3 { 
+		color: rgb(0, 51, 204); 
+	}navigation
+		
 
 
 	h1, h2 {
 		color: rgb(0, 51, 204); 
 	}
 
-    h3 {
-        color: rgb(0, 153, 0);
-    }
+	h3 {
+		color: rgb(0, 153, 0);
+	}
 
-    .post .post-meta li a, .type-page .post-meta li a {
-        color:  #0093dd;
-    }
-
-
-    .footer-wrap {
-        background: none;
-    }
-
-    
+	.post .post-meta li a, .type-page .post-meta li a {
+		color:  #0093dd;
+	}
 
 
+	.footer-wrap {
+		background: none;
+	}
+
+
+
+	/* THEME COLOURS OVERWRITE */
+
+	/* Basketr Minus/Plus buttons */
+	div.quantity .plus, div.quantity .minus, 
+	div.quantity .plus:hover, div.quantity .minus:hover {
+		color: rgb(0, 153, 0); /* @contentGreen */
+	}
+
+	/* Messages */
+	.woocommerce_message, .woocommerce-message {
+	border-color: rgb(0, 153, 0); /* @contentGreen */
+	}
+
+
+	/* product tabs */
+	.woocommerce_tabs ul.tabs li.active:before, .woocommerce-tabs ul.tabs li.active:before {
+		background: rgb(0, 153, 0); /* @contentGreen */
+		border-top: 1px solid rgb(0, 153, 0); /* @contentGreen */
+	}
+	.woocommerce_tabs ul.tabs li.active a , .woocommerce-tabs ul.tabs li.active a, 
+	.woocommerce_tabs ul.tabs li.active:before, .woocommerce-tabs ul.tabs li.active:before,
+	.woocommerce_tabs ul.tabs li.active a:hover , .woocommerce-tabs ul.tabs li.active a:hover, 
+	.woocommerce_tabs ul.tabs li a:hover, .woocommerce-tabs ul.tabs li a:hover {
+		color: rgb(0, 153, 0); /* @contentGreen */
+		border-top-color: rgb(0, 153, 0); /* @contentGreen */
+	}
+
+	/* Sale Badge */
+	.onsale {
+		background: rgb(0, 153, 0); /* @contentGreen */
+	}
+
+
+	/* Buttons */
+	a.button, a.comment-reply-link, 
+	#commentform #submit, .submit, input[type=submit], 
+	input.button, button.button {
+		border: 1px solid rgb(0, 220, 0); 
+		text-shadow: 0 1px 0 rgb(0, 120, 0); 
+		background-color: rgb(0, 153, 0); /* @contentGreen */
+		background-image: -webkit-gradient(linear, left top, left bottom, from(rgb(0, 244, 0)), to(rgb(0, 153, 0)));
+		background-image: -webkit-linear-gradient(top, rgb(0, 244, 0), rgb(0, 153, 0));
+		background-image: -moz-linear-gradient(top, rgb(0, 244, 0), rgb(0, 153, 0));
+		background-image: -ms-linear-gradient(top, rgb(0, 244, 0), rgb(0, 153, 0));
+		background-image: -o-linear-gradient(top, rgb(0, 244, 0), rgb(0, 153, 0));
+		background-image: linear-gradient(to bottom, rgb(0, 244, 0), rgb(0, 153, 0));
+		-webkit-box-shadow: 0 0 0 0.327em rgba(0, 0, 0, 0.075), 0 1px 2px rgba(0, 0, 0, 0.2), inset 0 1px rgb(0, 220, 0), inset 0 -1px rgb(0, 120, 0);
+		box-shadow: 0 0 0 0.327em rgba(0, 0, 0, 0.075), 0 1px 2px rgba(0, 0, 0, 0.2), inset 0 1px rgb(0, 220, 0), inset 0 -1px rgb(0, 120, 0);
+	}
+
+	a.button:hover, a.comment-reply-link:hover, 
+	#commentform #submit:hover, .submit:hover, input[type=submit]:hover, 
+	input.button:hover, button.button:hover {
+		color:  #fff;
+		background-color: rgb(0, 240, 0);
+		background-image: -webkit-gradient(linear, left top, left bottom, from(rgb(0, 244, 0)), to(rgb(0, 220, 0)));
+		background-image: -webkit-linear-gradient(top, rgb(0, 244, 0), rgb(0, 220, 0));
+		background-image: -moz-linear-gradient(top, rgb(0, 244, 0), rgb(0, 220, 0));
+		background-image: -ms-linear-gradient(top, rgb(0, 244, 0), rgb(0, 220, 0));
+		background-image: -o-linear-gradient(top, rgb(0, 244, 0), rgb(0, 220, 0));
+		background-image: linear-gradient(to bottom, rgb(0, 244, 0), rgb(0, 220, 0));
+	}
+
+	a.button:active, a.comment-reply-link:active, 
+	#commentform #submit:active, .submit:active, input[type=submit]:active, 
+	input.button:active, button.button:active {
+		color:  #fff;
+		background-color: rgb(0, 120, 0);
+		background-image: -webkit-gradient(linear, left top, left bottom, from(rgb(0, 153, 0)), to(rgb(0, 244, 0)));
+		background-image: -webkit-linear-gradient(top, rgb(0, 153, 0), rgb(0, 244, 0));
+		background-image: -moz-linear-gradient(top, rgb(0, 153, 0), rgb(0, 244, 0));
+		background-image: -ms-linear-gradient(top, rgb(0, 153, 0), rgb(0, 244, 0));
+		background-image: -o-linear-gradient(top, rgb(0, 153, 0), rgb(0, 244, 0));
+		background-image: linear-gradient(to bottom, rgb(0, 153, 0), rgb(0, 244, 0));
+	}
 
 } /* // @media - 768px */

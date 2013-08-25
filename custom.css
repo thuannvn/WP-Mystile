@@ -21,6 +21,15 @@ DESKTOP STYLES
 Add styles inside the media query below that you only want to be applied to the desktop layout of your site */
 
 
+
+/* 
+TAG ICONS
+---------
+Uses custom Icon font
+*/
+@import "custom-icon-font.css";
+
+
 /* 
 COLOURS USED
 ------------
@@ -43,7 +52,10 @@ TODO: Update to .less mixins
 
 // Buttons and Navigation
 @bgrnavigation: rgba(253, 253, 253, 0.47); // 
-@navColour: 	rgb(0, 83, 94); 		// #00535E
+@navColor: 	rgb(0, 83, 94); 		// #00535E
+
+@bgNavigationActive: rgb(255, 255, 255);
+@navColorActive: 	 @contentGreen; 		// rgb(0, 153, 0);
 
 @buttonColor:   rgba(0,0,0,0.2);
 
@@ -106,7 +118,7 @@ TODO: Update to .less mixins
     /* HEADER */
     #header {
         border-bottom: none;
-        margin-top: 2.231em;
+        margin-top: 2.32em;
         margin-bottom: 0;
     }
 
@@ -151,7 +163,7 @@ TODO: Update to .less mixins
         border: none;
         border-radius: 0;
         background-color: transparent;
-        color: rgb(0, 83, 94); /* @navColour */
+        color: rgb(0, 153, 0); /* @navColorActive */
     }
 
     /* Current && Hover - Cart and Nav */
@@ -171,7 +183,7 @@ TODO: Update to .less mixins
         border: none;
         border-radius: 0;
         color: rgb(0, 51, 204); /* @contentBlue */
-        background: rgba(253, 253, 253, 0.47); /* @bgrnavigation */
+        background: rgb(255, 255, 255); /* @bgNavigationActive */
     }
 
     #wrapper #navigation ul.nav > li.parent:hover a:before, 
@@ -342,12 +354,9 @@ TODO: Update to .less mixins
 		/*background: rgba(252, 252, 252,.2);*/
 	}
 
-	#top {
-		background: rgba(255, 255, 255, 0.85); 
-	}
-
-	#header #navigation {
-		background: rgba(128, 213, 215, 0.7);
+	#top, #header #navigation,
+	#content, .footer-wrap section {
+		background: rgba(255, 255, 255, 0.85);
 	}
 
 
@@ -363,23 +372,21 @@ TODO: Update to .less mixins
     }
 	
     #header #navigation .nav > li:first-child a:before {
+        font-family: 'TAG001';
+        font-size: 2.2em;
+        font-weight: normal;
         position: absolute;
-        left: 1016px; 
-        top: 1.1em; /* Same as "ul.nav li a" padding */
-        content: "";        
+        left: 1008px; 
+        top: 0; /* Same as "ul.nav li a" padding */
+        content: "\e008";
         width: 20px;
         height: 20px; 
-        background: url("./images/home-nav-sprite.gif") scroll no-repeat 0 -26px;
     }
 
     #header #navigation .nav > li:first-child a:hover:before,
     .home #header #navigation .nav > li.current_page_item a:before {
         background-position: 0 0;
     }
-	#content, .footer-wrap section {
-		background: rgba(255, 255, 255, 0.85);
-	}
-
 		
 	a, a h3
 		{

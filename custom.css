@@ -134,7 +134,7 @@ TODO: Update to .less mixins
         display: block;
         position: absolute; 
         top: 0; left: 0;
-        float: none;
+        float: left;
         margin: 0 auto; 
         width: 100%;
         z-index: 101;
@@ -149,54 +149,6 @@ TODO: Update to .less mixins
     /* CART && NAVIGATION */
     ul.nav li a {
         padding: 1.1em;
-    }
-
-    #top ul.nav li a,
-
-    #wrapper #navigation ul.nav > li a,
-    #wrapper #navigation ul.nav > li:hover a a, 
-    #wrapper #navigation ul.nav > li.parent a, 
-    #wrapper #navigation ul.nav > li.parent a:before, 
-    #wrapper #navigation ul.nav > li.parent a:after, 
-    /* LEVEL 2 */
-    #wrapper #navigation ul.nav ul li a {
-        border: none;
-        border-radius: 0;
-        background-color: transparent;
-        color: rgb(0, 153, 0); /* @navColorActive */
-    }
-
-    /* Current && Hover - Cart and Nav */
-    #top ul.nav li:hover a, 
-    #top ul.nav li a:hover, 
-
-    #wrapper #navigation ul.nav ul, 
-    #wrapper #navigation ul.nav li:hover > a, 
-    #wrapper #navigation ul.nav li a:hover, 
-
-    #wrapper #navigation ul.nav li.current_page_item > a, 
-
-    #wrapper #navigation ul.nav > li.parent a:hover:before, 
-    #wrapper #navigation ul.nav > li.parent a:hover:after, 
-    #wrapper #navigation ul.nav > li.parent:hover a:before, 
-    #wrapper #navigation ul.nav > li.parent:hover a:after {
-        border: none;
-        border-radius: 0;
-        color: rgb(0, 51, 204); /* @contentBlue */
-        background: rgb(255, 255, 255); /* @bgNavigationActive */
-    }
-
-    #wrapper #navigation ul.nav > li.parent:hover a:before, 
-    #wrapper #navigation ul.nav > li.parent:hover a:after {
-        background: transparent;
-    }
-
-    /* LEVEL 2 */
-    #wrapper #navigation ul.nav ul {
-        border: none;
-        padding: 0;
-        box-shadow: 0 0.202em 0 0 rgba(227, 231, 232, 0.4);
-        -webkit-box-shadow: 0 0.202em 0 0 rgba(227, 231, 232, 0.4);
     }
 
     /* My Account LEVEL 2 */
@@ -215,7 +167,6 @@ TODO: Update to .less mixins
     #top ul.nav ul ul {
         left: -15.379em;
     }
-
 
    /* hiding CHECKOUT Link and Product SEARCH in the Header */
     #top .nav .checkout a, 
@@ -354,10 +305,68 @@ TODO: Update to .less mixins
 		/*background: rgba(252, 252, 252,.2);*/
 	}
 
+
 	#top, #header #navigation,
 	#content, .footer-wrap section {
 		background: rgba(255, 255, 255, 0.85);
 	}
+
+	/* Basket Navigation */
+	a:hover, #top ul.nav > li a:hover, 
+	ul.products li.product a:hover h3 { 
+		color: rgb(0, 51, 204); 
+	}
+
+    #top ul.nav li a,
+
+    #wrapper #navigation ul.nav > li a,
+    #wrapper #navigation ul.nav > li:hover a a, 
+    #wrapper #navigation ul.nav > li.parent a, 
+    #wrapper #navigation ul.nav > li.parent a:before, 
+    #wrapper #navigation ul.nav > li.parent a:after, 
+    /* LEVEL 2 */
+    #wrapper #navigation ul.nav ul li a {
+        border: none;
+        border-radius: 0;
+        background: transparent;
+        color: rgb(0, 153, 0); /* @navColorActive */
+    }
+
+    /* Current && Hover - Cart and Nav */
+    #top ul.nav li:hover a, 
+    #top ul.nav li a:hover, 
+
+/*    #wrapper #navigation ul.nav ul, */
+    #wrapper #navigation ul.nav li:hover > a, 
+    #wrapper #navigation ul.nav li a:hover, 
+
+    #wrapper #navigation ul.nav li.current_page_ancestor > a, 
+    #wrapper #navigation ul.nav li.current_page_item > a, 
+
+    #wrapper #navigation ul.nav > li.parent a:hover:before, 
+    #wrapper #navigation ul.nav > li.parent a:hover:after, 
+    #wrapper #navigation ul.nav > li.parent:hover a:before, 
+    #wrapper #navigation ul.nav > li.parent:hover a:after {
+        border: none;
+        border-radius: 0;
+        color: rgb(0, 51, 204); /* @contentBlue */
+        background: rgb(255, 255, 255); /* @bgNavigationActive */
+    }
+
+    #wrapper #navigation ul.nav > li.parent:hover a:before, 
+    #wrapper #navigation ul.nav > li.parent:hover a:after {
+        background: transparent;
+    }
+
+    /* LEVEL 2 */
+    #wrapper #navigation ul.nav ul {
+        border: none;
+        padding: 0;
+		background: rgba(255, 255, 255, 0.85);
+        box-shadow: 0 0.202em 0 0 rgba(227, 231, 232, 0.4);
+        -webkit-box-shadow: 0 0.202em 0 0 rgba(227, 231, 232, 0.4);
+    }
+
 
 
     /* HOME Icon */
@@ -392,14 +401,6 @@ TODO: Update to .less mixins
 		{
 		color: rgb(0, 83, 94);
 	}
-
-	/* Basket Navigation */
-	a:hover, #top ul.nav > li a:hover, 
-	ul.products li.product a:hover h3 { 
-		color: rgb(0, 51, 204); 
-	}navigation
-		
-
 
 	h1, h2 {
 		color: rgb(0, 51, 204); 

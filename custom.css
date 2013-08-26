@@ -497,3 +497,10 @@ TODO: Update to .less mixins
 	}
 
 } /* // @media - 768px */
+
+/* WOO Overrides */
+ul.products li.product .price {
+	line-height: 0;
+	overflow: hidden;
+}
+

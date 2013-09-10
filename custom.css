@@ -208,6 +208,12 @@ TODO: Update to .less mixins
         width:  21.5%;
     }
 
+    /* Search and Subscribe in Footer */
+    .footer-wrap input.s, 
+    .footer-wrap input.email {
+        max-width: 55%;
+    }
+
 
 
     /* PRODUCTS */

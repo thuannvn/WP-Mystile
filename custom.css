@@ -120,6 +120,7 @@ TODO: Update to .less mixins
         border-bottom: none;
         margin-top: 2.32em;
         margin-bottom: 0;
+        min-height: 16em;
     }
 
     #header hgroup {
@@ -134,7 +135,7 @@ TODO: Update to .less mixins
         display: block;
         position: absolute; 
         top: 0; left: 0;
-        float: none;
+        float: left;
         margin: 0 auto; 
         width: 100%;
         z-index: 101;
@@ -151,6 +152,192 @@ TODO: Update to .less mixins
         padding: 1.1em;
     }
 
+    /* My Account LEVEL 2 */
+    ul.nav ul {
+		width: 16.379em;
+        left: initial;
+        right: 0;
+    }
+
+    /* LEVEL 3 */
+    #wrapper #navigation ul.nav ul ul {
+        top:  0.1em;
+    }
+
+    /* May Account - LEVEL 3 */
+    #top ul.nav ul ul {
+        left: -15.379em;
+    }
+
+   /* hiding CHECKOUT Link and Product SEARCH in the Header */
+    #top .nav .checkout a, 
+    #top .nav .search { 
+        display: none; 
+    } 
+
+    #top .wc-nav li.cart a {
+        position: relative;
+    }
+
+
+
+    /* PAGE CONTENT */
+    /* ".layout-full" */
+    .layout-full #content #main {
+        width:  94%;
+        padding: 1.5em 3% .5em 3%;
+    }
+
+    /* ".layout-left-content" && ".layout-right-content" */
+    .layout-left-content #content #main, 
+    .layout-right-content #content #main {
+        width:  69.2%;
+        padding: 1.5em 3% .5em 3%;
+        float: left;
+    }
+    .layout-right-content #content #main {
+        float: right;
+    }
+
+
+    #sidebar {
+        margin: 3em 1em 0 0;
+    }
+
+
+    /* Contact page */
+    #connect .social {
+        display: block;
+        clear: left;
+    }
+
+
+    /* FOOTER */
+    .footer-wrap section > div:first-child {
+        padding-left: 1em;
+    }
+
+    #footer-widgets.col-4 .block {
+        width:  21.5%;
+    }
+
+    /* Search and Subscribe in Footer */
+    .footer-wrap input.s, 
+    .footer-wrap input.email {
+        max-width: 55%;
+    }
+
+
+
+    /* PRODUCTS */
+    .single-product .images {
+        width: 29%;
+    }
+
+    .single-product .summary {
+        width: 69%;
+    }
+
+    ul.products li.product img {
+        width: 80%;
+    }
+
+    /* TODO: add a badge icon with type of product */
+
+
+    ul, ol {
+        margin-left:  1.7em;
+    }
+
+
+
+/*
+**
+** COLOURS
+** 
+*/
+
+	body {
+		background-color: rgb(182, 213, 215); /* @bgrPage: */
+	}
+
+	.page-background {
+		background-image: url('/2013/wp-content/uploads/2013/09/tag-background01.jpg'), url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAG0lEQVQIW2NkYGAwBuKzQAwGjDAGNgGwSgwVAFCGAgUGpiTrAAAAAElFTkSuQmCC');
+		background-repeat:  no-repeat, repeat;
+		background-position:  top left, top left;
+		min-height: 100%;
+		min-width: 1024px;
+		
+		/* Set up proportionate scaling */
+		width: 100%;
+		height: auto;
+        background-size: 100% 100%;
+
+		/* Set up positioning */
+		position: fixed;
+		top: 0;
+		left: 0;
+		opacity: 1;
+		-webkit-transition: top 1s ease-in;
+			-moz-transition: top 1s ease-in;
+				-o-transition: top 1s ease-in;
+				transition: top 1s ease-in;
+	}
+	body[class*="scroll1"] .page-background { 
+		opacity: .8; top: -25%; 
+		-webkit-transition: top .75s ease-out;
+			-moz-transition: top .75s ease-out;
+				-o-transition: top .75s ease-out;
+				transition: top .75s ease-out;
+	}
+	body[class*="scroll2"] .page-background { 
+		opacity: .6; top: -50%; 
+		-webkit-transition: top .75s ease-out;
+			-moz-transition: top .75s ease-out;
+				-o-transition: top .75s ease-out;
+				transition: top .75s ease-out;
+	}
+	body[class*="scroll3"] .page-background { 
+		opacity: .4; top: -75%; 
+		-webkit-transition: top .75s ease-out;
+			-moz-transition: top .75s ease-out;
+				-o-transition: top .75s ease-out;
+				transition: top .75s ease-out;
+	}
+	body[class*="scroll4"] .page-background { 
+		opacity: .2; top: -100%; 
+		-webkit-transition: top .75s ease-out;
+			-moz-transition: top .75s ease-out;
+				-o-transition: top .75s ease-out;
+				transition: top .75s ease-out;
+	}
+	body[class*="scroll5"] .page-background, body[class*="scroll6"] .page-background,
+	body[class*="scroll7"] .page-background, body[class*="scroll8"] .page-background,
+	body[class*="scroll9"] .page-background { opacity: 0; top: -100%; 
+		-webkit-transition: top .75s ease-out;
+			-moz-transition: top .75s ease-out;
+				-o-transition: top .75s ease-out;
+				transition: top .75s ease-out;
+	}
+
+
+	#wrapper {
+		position: relative;
+		/*background: rgba(252, 252, 252,.2);*/
+	}
+
+
+	#top, #header #navigation,
+	#content, .footer-wrap section {
+		background: rgba(255, 255, 255, 0.95);
+	}
+
+	/* Basket Navigation */
+	a:hover, #top ul.nav > li a:hover, 
+	ul.products li.product a:hover h3 { 
+		color: rgb(0, 51, 204); 
+	}
+
     #top ul.nav li a,
 
     #wrapper #navigation ul.nav > li a,
@@ -162,7 +349,7 @@ TODO: Update to .less mixins
     #wrapper #navigation ul.nav ul li a {
         border: none;
         border-radius: 0;
-        background-color: transparent;
+        background: transparent;
         color: rgb(0, 153, 0); /* @navColorActive */
     }
 
@@ -170,10 +357,11 @@ TODO: Update to .less mixins
     #top ul.nav li:hover a, 
     #top ul.nav li a:hover, 
 
-    #wrapper #navigation ul.nav ul, 
+/*    #wrapper #navigation ul.nav ul, */
     #wrapper #navigation ul.nav li:hover > a, 
     #wrapper #navigation ul.nav li a:hover, 
 
+    #wrapper #navigation ul.nav li.current_page_ancestor > a, 
     #wrapper #navigation ul.nav li.current_page_item > a, 
 
     #wrapper #navigation ul.nav > li.parent a:hover:before, 
@@ -195,169 +383,11 @@ TODO: Update to .less mixins
     #wrapper #navigation ul.nav ul {
         border: none;
         padding: 0;
+		background: rgba(255, 255, 255, 0.85);
         box-shadow: 0 0.202em 0 0 rgba(227, 231, 232, 0.4);
         -webkit-box-shadow: 0 0.202em 0 0 rgba(227, 231, 232, 0.4);
     }
 
-    /* My Account LEVEL 2 */
-    ul.nav ul {
-		width: 16.379em;
-        left: initial;
-        right: 0;
-    }
-
-    /* LEVEL 3 */
-    #wrapper #navigation ul.nav ul ul {
-        top:  0.1em;
-    }
-
-    /* May Account - LEVEL 3 */
-    #top ul.nav ul ul {
-        left: -15.379em;
-    }
-
-
-   /* hiding CHECKOUT Link and Product SEARCH in the Header */
-    #top .nav .checkout a, 
-    #top .nav .search { 
-        display: none; 
-    } 
-
-    #top .wc-nav li.cart a {
-        position: relative;
-    }
-
-
-
-    /* PAGE CONTENT */
-    /* ".layout-full" */
-    .layout-full #content #main {
-        width:  94%;
-        padding: 1.5em 3% 0 3%;
-    }
-
-    /* ".layout-left-content" && ".layout-right-content" */
-    .layout-left-content #content #main, 
-    .layout-right-content #content #main {
-        width:  69.2%;
-        padding: 1.5em 3% 0 3%;
-    }
-
-    #sidebar {
-        margin: 3em 1em 0 0;
-    }
-
-
-    /* FOOTER */
-    .footer-wrap section > div:first-child {
-        padding-left: 1em;
-    }
-
-    #footer-widgets.col-4 .block {
-        width:  21.5%;
-    }
-
-
-
-    /* PRODUCTS */
-    .single-product .images {
-        width: 29%;
-    }
-
-    .single-product .summary {
-        width: 69%;
-    }
-
-    ul.products li.product img {
-        width: 80%;
-    }
-
-    /* TODO: add a badge icon with type of product */
-
-
-
-
-
-
-/*
-**
-** COLOURS
-** 
-*/
-
-	body {
-		background-color: rgb(182, 213, 215); /* @bgrPage: */
-	}
-
-	.page-background {
-		/*background-image: url(/wp-content/uploads/2013/08/background-green-leaf.jpg), url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAG0lEQVQIW2NkYGAwBuKzQAwGjDAGNgGwSgwVAFCGAgUGpiTrAAAAAElFTkSuQmCC);*/
-		background-image: url(http://www.zfdesign.net/zfd-work/RobertRussell/TAG/WordPress/MystyleWT/wp-content/uploads/2013/07/background-green-leaf.jpg), url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAG0lEQVQIW2NkYGAwBuKzQAwGjDAGNgGwSgwVAFCGAgUGpiTrAAAAAElFTkSuQmCC);
-		background-repeat:  no-repeat, repeat;
-		background-position:  top left, top left;
-		min-height: 80%;
-		min-width: 1024px;
-		
-		/* Set up proportionate scaling */
-		width: 100%;
-		height: auto;
-		
-		/* Set up positioning */
-		position: fixed;
-		top: 0;
-		left: 0;
-		opacity: 1;
-		-webkit-transition: top 1s ease-in;
-			-moz-transition: top 1s ease-in;
-				-o-transition: top 1s ease-in;
-				transition: top 1s ease-in;
-	}
-	body[class*="scroll1"] .page-background { 
-		opacity: .8; top: -20%; 
-		-webkit-transition: top .75s ease-out;
-			-moz-transition: top .75s ease-out;
-				-o-transition: top .75s ease-out;
-				transition: top .75s ease-out;
-	}
-	body[class*="scroll2"] .page-background { 
-		opacity: .6; top: -40%; 
-		-webkit-transition: top .75s ease-out;
-			-moz-transition: top .75s ease-out;
-				-o-transition: top .75s ease-out;
-				transition: top .75s ease-out;
-	}
-	body[class*="scroll3"] .page-background { 
-		opacity: .4; top: -60%; 
-		-webkit-transition: top .75s ease-out;
-			-moz-transition: top .75s ease-out;
-				-o-transition: top .75s ease-out;
-				transition: top .75s ease-out;
-	}
-	body[class*="scroll4"] .page-background { 
-		opacity: .2; top: -80%; 
-		-webkit-transition: top .75s ease-out;
-			-moz-transition: top .75s ease-out;
-				-o-transition: top .75s ease-out;
-				transition: top .75s ease-out;
-	}
-	body[class*="scroll5"] .page-background, body[class*="scroll6"] .page-background,
-	body[class*="scroll7"] .page-background, body[class*="scroll8"] .page-background,
-	body[class*="scroll9"] .page-background { opacity: 0; top: -100%; 
-		-webkit-transition: top .75s ease-out;
-			-moz-transition: top .75s ease-out;
-				-o-transition: top .75s ease-out;
-				transition: top .75s ease-out;
-	}
-
-
-	#wrapper {
-		position: relative;
-		/*background: rgba(252, 252, 252,.2);*/
-	}
-
-	#top, #header #navigation,
-	#content, .footer-wrap section {
-		background: rgba(255, 255, 255, 0.85);
-	}
 
 
     /* HOME Icon */
@@ -392,14 +422,6 @@ TODO: Update to .less mixins
 		{
 		color: rgb(0, 83, 94);
 	}
-
-	/* Basket Navigation */
-	a:hover, #top ul.nav > li a:hover, 
-	ul.products li.product a:hover h3 { 
-		color: rgb(0, 51, 204); 
-	}navigation
-		
-
 
 	h1, h2 {
 		color: rgb(0, 51, 204); 
@@ -503,4 +525,3 @@ ul.products li.product .price {
 	line-height: 0;
 	overflow: hidden;
 }
-

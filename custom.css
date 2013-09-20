@@ -29,43 +29,7 @@ Uses custom Icon font
 */
 @import "custom-icon-font.css";
 
-
-/* 
-COLOURS USED
-------------
-Keep a reference for easy updates 
-TODO: Update to .less mixins
-
-@bgrPage: 		rgb(182, 213, 215); 	//
-@bgrContent: 	rgba(255, 255, 255, 0.85); 	// 
-@bgrFooter: 	rgba(0,0,0,0.2); 		// 
-@bgrFeature:    rgb(219, 234, 235);     //
-
-@bodyColor; 	#000;
-@contentBlue: 	rgb(0, 51, 204); 		// #03C
-@contentGreen: 	rgb(0, 153, 0); 		// #090
-@contentRed: 	rgb(255, 51, 51); 		// #F33
-
-// Headings:
-@headingBlue: 	@contentBlue; 
-@headingGreen: 	@contentGreen;
-
-// Buttons and Navigation
-@bgrnavigation: rgba(253, 253, 253, 0.47); // 
-@navColor: 	rgb(0, 83, 94); 		// #00535E
-
-@bgNavigationActive: rgb(255, 255, 255);
-@navColorActive: 	 @contentGreen; 		// rgb(0, 153, 0);
-
-@buttonColor:   rgba(0,0,0,0.2);
-
-@footerGreen: 	@navColour;
-
-*/
-
-
 @media only screen and (min-width: 768px) {
-
 
 /*
 **
@@ -125,7 +89,7 @@ TODO: Update to .less mixins
 
     #header hgroup {
         margin-bottom: 0;
-        margin-top: 1.618em;
+        margin-top: 3.618em;
     }
 
 
@@ -181,7 +145,11 @@ TODO: Update to .less mixins
 
 
 
-    /* PAGE CONTENT */
+	/* PAGE CONTENT */
+	#main {
+		padding: 1.5em 3% .5em 3%;   	
+	}
+   
     /* ".layout-full" */
     .layout-full #content #main {
         width:  94%;
@@ -189,10 +157,7 @@ TODO: Update to .less mixins
     }
 
     /* ".layout-left-content" && ".layout-right-content" */
-    .layout-left-content #content #main, 
-    .layout-right-content #content #main {
-        width:  69.2%;
-        padding: 1.5em 3% .5em 3%;
+    .layout-left-content #content #main {
         float: left;
     }
     .layout-right-content #content #main {
@@ -221,6 +186,10 @@ TODO: Update to .less mixins
         width:  21.5%;
     }
 
+	.footer-wrap ul, #sidebar ul {
+		margin-left: 0;	
+	}
+	
     /* Search and Subscribe in Footer */
     .footer-wrap input.s, 
     .footer-wrap input.email {
@@ -257,12 +226,53 @@ TODO: Update to .less mixins
 ** 
 */
 
+
+/* 
+COLOURS USED
+------------
+Keep a reference for easy updates 
+TODO: Update to .less mixins
+
+@pageBackground: 		rgb(182, 213, 215); 
+@contentBackground: 	rgba(255, 255, 255, 0.85); 
+@FooterBackground: 		rgba(0,0,0,0.2); 
+@featureBackground:    	rgb(219, 234, 235);
+@bodyColor: 			#686868;
+
+@logoGreen: 			rgb(0, 164, 79); 		// #08A54E 
+@logoGrey: 				rgb(180, 180,180); 		// #B4B4B4
+@contentGreen: 			@logoGreen;				// #08A54E
+@contentRed: 			rgb(255, 51, 51); 		// #F33
+
+
+// Navigation, Links, Buttons
+@navBackground: 		rgba(253, 253, 253, 0.47); 
+@vavActiveBackground: 	rgb(255, 255, 255);		// #FFFFFF
+@navColor: 				rgb(0, 83, 94); 		// #00535E
+
+@linkBlue: 				rgb(0, 51, 204); 		// #03C
+// Active
+@navColorActive: 	 	@contentGreen; 			// #08A54E
+
+@buttonColor:   		rgba(0,0,0,0.2);
+
+// Headings:
+@headingBlue: 			@linkBlue; 
+@headingGreen: 			@contentGreen;
+
+
+@footerGreen: 	@navColour;
+*/
+
+
 	body {
-		background-color: rgb(182, 213, 215); /* @bgrPage: */
+		background-color: rgb(182, 213, 215); /* @pageBackground: */
+		color: #686868; /* @bodyColor */
 	}
 
 	.page-background {
-		background-image: url('/2013/wp-content/uploads/2013/09/tag-background01.jpg'), url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAG0lEQVQIW2NkYGAwBuKzQAwGjDAGNgGwSgwVAFCGAgUGpiTrAAAAAElFTkSuQmCC');
+		background-image: url('/2013/wp-content/uploads/2013/09/tag-background01.jpg'), 
+		url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAG0lEQVQIW2NkYGAwBuKzQAwGjDAGNgGwSgwVAFCGAgUGpiTrAAAAAElFTkSuQmCC');
 		background-repeat:  no-repeat, repeat;
 		background-position:  top left, top left;
 		min-height: 100%;
@@ -332,12 +342,25 @@ TODO: Update to .less mixins
 		background: rgba(255, 255, 255, 0.95);
 	}
 
-	/* Basket Navigation */
+
+
+	/* Links and Navigation */
+			
+	a, a h3,
+	.post .post-meta li a, 
+	.type-page .post-meta li a {
+		color: rgb(0, 83, 94); /* @navColor */
+	}
+	
 	a:hover, #top ul.nav > li a:hover, 
-	ul.products li.product a:hover h3 { 
-		color: rgb(0, 51, 204); 
+	ul.products li.product a:hover h3,
+	.post .post-meta li a:hover, .type-page .post-meta li a:hover,  
+	.single-product .summary .product_meta a:hover { 
+		color: rgb(0, 164, 79); /* @logoGreen */ 
 	}
 
+
+	/* Main Navigation Levels and States */
     #top ul.nav li a,
 
     #wrapper #navigation ul.nav > li a,
@@ -350,7 +373,7 @@ TODO: Update to .less mixins
         border: none;
         border-radius: 0;
         background: transparent;
-        color: rgb(0, 153, 0); /* @navColorActive */
+        color: rgb(0, 83, 94); /* @navColor */
     }
 
     /* Current && Hover - Cart and Nav */
@@ -362,16 +385,25 @@ TODO: Update to .less mixins
     #wrapper #navigation ul.nav li a:hover, 
 
     #wrapper #navigation ul.nav li.current_page_ancestor > a, 
-    #wrapper #navigation ul.nav li.current_page_item > a, 
+    #wrapper #navigation ul.nav li.current_page_ancestor > a:before, 
+    #wrapper #navigation ul.nav li.current_page_ancestor > a:after, 
 
-    #wrapper #navigation ul.nav > li.parent a:hover:before, 
-    #wrapper #navigation ul.nav > li.parent a:hover:after, 
+    #wrapper #navigation ul.nav li.current_page_item > a, 
+    #wrapper #navigation ul.nav li.current_page_item > a:before, 
+    #wrapper #navigation ul.nav li.current_page_item > a:after, 
+
+    #wrapper #navigation ul.nav > li.current_page_parent > a, 
+    #wrapper #navigation ul.nav > li.current_page_parent > a:before, 
+    #wrapper #navigation ul.nav > li.current_page_parent > a:after, 
+
+    #wrapper #navigation ul.nav > li.parent a:before:hover, 
+    #wrapper #navigation ul.nav > li.parent a:after:hover, 
     #wrapper #navigation ul.nav > li.parent:hover a:before, 
     #wrapper #navigation ul.nav > li.parent:hover a:after {
         border: none;
         border-radius: 0;
-        color: rgb(0, 51, 204); /* @contentBlue */
-        background: rgb(255, 255, 255); /* @bgNavigationActive */
+        color: rgb(0, 164, 79); /* @logoGreen */
+        background: rgb(255, 255, 255); /* @vavActiveBackground */
     }
 
     #wrapper #navigation ul.nav > li.parent:hover a:before, 
@@ -383,7 +415,7 @@ TODO: Update to .less mixins
     #wrapper #navigation ul.nav ul {
         border: none;
         padding: 0;
-		background: rgba(255, 255, 255, 0.85);
+		background: rgba(255, 255, 255, 0.85); /* @contentBackground: */
         box-shadow: 0 0.202em 0 0 rgba(227, 231, 232, 0.4);
         -webkit-box-shadow: 0 0.202em 0 0 rgba(227, 231, 232, 0.4);
     }
@@ -417,24 +449,26 @@ TODO: Update to .less mixins
     .home #header #navigation .nav > li.current_page_item a:before {
         background-position: 0 0;
     }
-		
-	a, a h3
-		{
-		color: rgb(0, 83, 94);
+
+
+
+	h1 {
+		color: rgb(180, 180,180); /* @logoGrey */
+		font-size: 2.844em;
+	}
+	
+	h2 {
+		font-size: 2.013em;
 	}
 
-	h1, h2 {
-		color: rgb(0, 51, 204); 
+	h2, h3, h4, h5, h6 {
+		color:  rgb(0, 164, 79); /* @logoGreen */
 	}
 
-	h3 {
-		color: rgb(0, 153, 0);
-	}
 
-	.post .post-meta li a, .type-page .post-meta li a {
-		color:  #0093dd;
+	.type-post .meta .month {
+		background: rgb(0, 164, 79); /* @logoGreen */
 	}
-
 
 	.footer-wrap {
 		background: none;
@@ -447,31 +481,31 @@ TODO: Update to .less mixins
 	/* Basketr Minus/Plus buttons */
 	div.quantity .plus, div.quantity .minus, 
 	div.quantity .plus:hover, div.quantity .minus:hover {
-		color: rgb(0, 153, 0); /* @contentGreen */
+		color: rgb(0, 164, 79); /* @contentGreen */
 	}
 
 	/* Messages */
 	.woocommerce_message, .woocommerce-message {
-	border-color: rgb(0, 153, 0); /* @contentGreen */
+	border-color: rgb(0, 164, 79); /* @contentGreen */
 	}
 
 
 	/* product tabs */
 	.woocommerce_tabs ul.tabs li.active:before, .woocommerce-tabs ul.tabs li.active:before {
-		background: rgb(0, 153, 0); /* @contentGreen */
-		border-top: 1px solid rgb(0, 153, 0); /* @contentGreen */
+		background: rgb(0, 164, 79); /* @contentGreen */
+		border-top: 1px solid rgb(0, 164, 79); /* @contentGreen */
 	}
 	.woocommerce_tabs ul.tabs li.active a , .woocommerce-tabs ul.tabs li.active a, 
 	.woocommerce_tabs ul.tabs li.active:before, .woocommerce-tabs ul.tabs li.active:before,
 	.woocommerce_tabs ul.tabs li.active a:hover , .woocommerce-tabs ul.tabs li.active a:hover, 
 	.woocommerce_tabs ul.tabs li a:hover, .woocommerce-tabs ul.tabs li a:hover {
-		color: rgb(0, 153, 0); /* @contentGreen */
-		border-top-color: rgb(0, 153, 0); /* @contentGreen */
+		color: rgb(0, 164, 79); /* @contentGreen */
+		border-top-color: rgb(0, 164, 79); /* @contentGreen */
 	}
 
 	/* Sale Badge */
 	.onsale {
-		background: rgb(0, 153, 0); /* @contentGreen */
+		background: rgb(0, 164, 79); /* @contentGreen */
 	}
 
 
@@ -481,13 +515,13 @@ TODO: Update to .less mixins
 	input.button, button.button {
 		border: 1px solid rgb(0, 220, 0); 
 		text-shadow: 0 1px 0 rgb(0, 120, 0); 
-		background-color: rgb(0, 153, 0); /* @contentGreen */
-		background-image: -webkit-gradient(linear, left top, left bottom, from(rgb(0, 244, 0)), to(rgb(0, 153, 0)));
-		background-image: -webkit-linear-gradient(top, rgb(0, 244, 0), rgb(0, 153, 0));
-		background-image: -moz-linear-gradient(top, rgb(0, 244, 0), rgb(0, 153, 0));
-		background-image: -ms-linear-gradient(top, rgb(0, 244, 0), rgb(0, 153, 0));
-		background-image: -o-linear-gradient(top, rgb(0, 244, 0), rgb(0, 153, 0));
-		background-image: linear-gradient(to bottom, rgb(0, 244, 0), rgb(0, 153, 0));
+		background-color: rgb(0, 164, 79); /* @contentGreen */
+		background-image: -webkit-gradient(linear, left top, left bottom, from(rgb(0, 244, 0)), to(rgb(0, 164, 79)));
+		background-image: -webkit-linear-gradient(top, rgb(0, 244, 0), rgb(0, 164, 79));
+		background-image: -moz-linear-gradient(top, rgb(0, 244, 0), rgb(0, 164, 79));
+		background-image: -ms-linear-gradient(top, rgb(0, 244, 0), rgb(0, 164, 79));
+		background-image: -o-linear-gradient(top, rgb(0, 244, 0), rgb(0, 164, 79));
+		background-image: linear-gradient(to bottom, rgb(0, 244, 0), rgb(0, 164, 79));
 		-webkit-box-shadow: 0 0 0 0.327em rgba(0, 0, 0, 0.075), 0 1px 2px rgba(0, 0, 0, 0.2), inset 0 1px rgb(0, 220, 0), inset 0 -1px rgb(0, 120, 0);
 		box-shadow: 0 0 0 0.327em rgba(0, 0, 0, 0.075), 0 1px 2px rgba(0, 0, 0, 0.2), inset 0 1px rgb(0, 220, 0), inset 0 -1px rgb(0, 120, 0);
 	}
@@ -510,12 +544,12 @@ TODO: Update to .less mixins
 	input.button:active, button.button:active {
 		color:  #fff;
 		background-color: rgb(0, 120, 0);
-		background-image: -webkit-gradient(linear, left top, left bottom, from(rgb(0, 153, 0)), to(rgb(0, 244, 0)));
-		background-image: -webkit-linear-gradient(top, rgb(0, 153, 0), rgb(0, 244, 0));
-		background-image: -moz-linear-gradient(top, rgb(0, 153, 0), rgb(0, 244, 0));
-		background-image: -ms-linear-gradient(top, rgb(0, 153, 0), rgb(0, 244, 0));
-		background-image: -o-linear-gradient(top, rgb(0, 153, 0), rgb(0, 244, 0));
-		background-image: linear-gradient(to bottom, rgb(0, 153, 0), rgb(0, 244, 0));
+		background-image: -webkit-gradient(linear, left top, left bottom, from(rgb(0, 164, 79)), to(rgb(0, 244, 0)));
+		background-image: -webkit-linear-gradient(top, rgb(0, 164, 79), rgb(0, 244, 0));
+		background-image: -moz-linear-gradient(top, rgb(0, 164, 79), rgb(0, 244, 0));
+		background-image: -ms-linear-gradient(top, rgb(0, 164, 79), rgb(0, 244, 0));
+		background-image: -o-linear-gradient(top, rgb(0, 164, 79), rgb(0, 244, 0));
+		background-image: linear-gradient(to bottom, rgb(0, 164, 79), rgb(0, 244, 0));
 	}
 
 } /* // @media - 768px */

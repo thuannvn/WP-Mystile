@@ -22,7 +22,7 @@ function tag_background_style() {
     <style type="text/css" media="screen">
 	.page-background { background-image: url("<?php the_field('page-background'); ?>"), url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAG0lEQVQIW2NkYGAwBuKzQAwGjDAGNgGwSgwVAFCGAgUGpiTrAAAAAElFTkSuQmCC"); }
     </style>
-<?php
+<?php	
   }
 }
 

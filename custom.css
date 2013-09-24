@@ -84,12 +84,12 @@ Uses custom Icon font
         border-bottom: none;
         margin-top: 2.32em;
         margin-bottom: 0;
-        min-height: 16em;
+        min-height: 19em;
     }
 
     #header hgroup {
         margin-bottom: 0;
-        margin-top: 3.618em;
+        margin-top: 5.618em;
     }
 
 
@@ -233,7 +233,7 @@ COLOURS USED
 Keep a reference for easy updates 
 TODO: Update to .less mixins
 
-@pageBackground: 		rgb(182, 213, 215); 
+@pageBackground: 		rgb(220, 240, 220); 
 @contentBackground: 	rgba(255, 255, 255, 0.85); 
 @FooterBackground: 		rgba(0,0,0,0.2); 
 @featureBackground:    	rgb(219, 234, 235);
@@ -266,7 +266,7 @@ TODO: Update to .less mixins
 
 
 	body {
-		background-color: rgb(182, 213, 215); /* @pageBackground: */
+		background-color: rgb(220, 240, 220); /* @pageBackground: */
 		color: #686868; /* @bodyColor */
 	}
 
@@ -450,7 +450,9 @@ TODO: Update to .less mixins
         background-position: 0 0;
     }
 
-
+	h1, h2, h3, h4, h5, h6 {
+		font-family: Helvetica, Verdana, Arial, sans-serif;
+	}
 
 	h1 {
 		color: rgb(180, 180,180); /* @logoGrey */

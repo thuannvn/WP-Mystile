@@ -28,9 +28,10 @@ function tag_background_style() {
 
 
 // add_hoock(woo_head)
-add_hoock( 'woo_head', 'add_ltie7_icon_filla' );
+add_action( 'woo_head', 'add_head_tags' );
 
-function add_ltie7_icon_filla() {
+function add_head_tags() {
+	echo '<meta name="viewport" content="initial-scale=2.3, user-scalable=no">';
     $base_url = defined('WP_CONTENT_URL')? WP_CONTENT_URL : '';
     echo '<!--[if lte IE 7]><script type="text/javascript" src="' . $base_url . '/themes/mystile/typefaces/lte-ie7.js"></script><![endif]-->';
 }

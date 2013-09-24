@@ -26,6 +26,15 @@ function tag_background_style() {
   }
 }
 
+
+// add_hoock(woo_head)
+add_hoock( 'woo_head', 'add_ltie7_icon_filla' );
+
+function add_ltie7_icon_filla() {
+    $base_url = defined('WP_CONTENT_URL')? WP_CONTENT_URL : '';
+    echo '<!--[if lte IE 7]><script type="text/javascript" src="' . $base_url . '/themes/mystile/typefaces/lte-ie7.js"></script><![endif]-->';
+}
+
 //add_hoock(woo_top)
 add_action('woo_top', 'add_page_background');
 

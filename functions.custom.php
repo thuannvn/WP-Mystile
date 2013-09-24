@@ -12,7 +12,20 @@
 add_theme_support( 'post-thumbnails' );
 
 
-// TODO: Custom fields: background-image
+//add_hoock(woo_head)
+add_action('woo_head', 'tag_background_style');
+
+// Requires Plugin Advanced Custom Fields - http://www.advancedcustomfields.com/
+function tag_background_style() {
+  if( get_field('page-background') ) {
+?>
+    <style type="text/css" media="screen">
+	.page-background { background-image: url("<?php the_field('page-background'); ?>"), url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAG0lEQVQIW2NkYGAwBuKzQAwGjDAGNgGwSgwVAFCGAgUGpiTrAAAAAElFTkSuQmCC"); }
+    </style>
+<?php
+  }
+}
+
 //add_hoock(woo_top)
 add_action('woo_top', 'add_page_background');
 

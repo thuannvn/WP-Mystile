@@ -271,7 +271,7 @@ TODO: Update to .less mixins
 	}
 
 	.page-background {
-		background-image: url('/2013/wp-content/uploads/2013/09/tag-background01.jpg'), 
+		background-image: url('/2013/wp-content/uploads/2013/10/tag-background01.jpg'),
 		url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAG0lEQVQIW2NkYGAwBuKzQAwGjDAGNgGwSgwVAFCGAgUGpiTrAAAAAElFTkSuQmCC');
 		background-repeat:  no-repeat, repeat;
 		background-position:  top left, top left;

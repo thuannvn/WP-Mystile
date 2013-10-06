@@ -561,3 +561,11 @@ ul.products li.product .price {
 	line-height: 0;
 	overflow: hidden;
 }
+
+.widget ul.product_list_widget li img {
+    width: 4em;
+    height: auto;
+    margin: .5em 0 0 .5em;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+}

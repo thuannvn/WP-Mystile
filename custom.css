@@ -569,3 +569,7 @@ ul.products li.product .price {
     -webkit-border-radius: 0;
     border-radius: 0;
 }
+
+.post img.thumbnail, .type-page img.thumbnail {
+    border-bottom: 0.327em solid rgb(0, 164, 79) !important;
+}

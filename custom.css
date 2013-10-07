@@ -130,7 +130,7 @@ Uses custom Icon font
 
     /* May Account - LEVEL 3 */
     #top ul.nav ul ul {
-        left: -15.379em;
+        left: -16.379em;
     }
 
    /* hiding CHECKOUT Link and Product SEARCH in the Header */
@@ -376,9 +376,23 @@ TODO: Update to .less mixins
         color: rgb(0, 83, 94); /* @navColor */
     }
 
-    /* Current && Hover - Cart and Nav */
-    #top ul.nav li:hover a, 
-    #top ul.nav li a:hover, 
+    /* CURRENT && HOVER - Cart and Nav */
+    #top ul.nav li:hover > a, 
+    #top ul.nav li > a:hover, 
+
+    #top ul.nav li.current_page_ancestor > a, 
+    #top ul.nav li.current_page_ancestor > a:after, 
+    #top ul.nav li.current_page_ancestor > a:before,
+ 
+    #top ul.nav li.current_page_parent > a, 
+    #top ul.nav li.current_page_parent > a:after, 
+    #top ul.nav li.current_page_parent > a:before, 
+
+    #top ul.nav li.current_page_item > a, 
+    #top ul.nav li.current_page_item > a:after, 
+    #top ul.nav li.current_page_item > a:before, 
+
+
 
 /*    #wrapper #navigation ul.nav ul, */
     #wrapper #navigation ul.nav li:hover > a, 
@@ -420,6 +434,22 @@ TODO: Update to .less mixins
         -webkit-box-shadow: 0 0.202em 0 0 rgba(227, 231, 232, 0.4);
     }
 
+
+    /* Top Nav Icons */
+    #top ul.nav ul li a {
+        position: relative;
+        padding-left: 1.3em;
+    }
+    #top ul.sub-menu li.parent > a:before {
+        position: absolute;
+        top: 0.7em; left: -.2em;
+        font-family: 'WebSymbolsRegular';
+        display: inline-block;
+        font-size: .857em;
+        margin-left: .618em;
+        content: "(";
+        font-weight: normal;
+    }
 
 
     /* HOME Icon */

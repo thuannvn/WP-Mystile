@@ -107,13 +107,19 @@ Uses custom Icon font
 
     #header #navigation > ul.nav {
         float: none;
-        width: 75.998em;
+        width: 100%;
+        max-width: 75.998em;
     }
 
 
     /* CART && NAVIGATION */
     ul.nav li a {
         padding: 1.1em;
+    }
+
+    /* HIDE Login link when logged in */
+    .logged-in ul#top-nav li.menu-item-type-custom {
+        display: none;
     }
 
     /* My Account LEVEL 2 */
@@ -128,7 +134,14 @@ Uses custom Icon font
         top:  0.1em;
     }
 
-    /* May Account - LEVEL 3 */
+    /* Navigation Level 3rd iPad bug - Note: Site specific */
+    @media only screen and (max-width: 768px) {
+        #header #navigation ul.nav ul ul {
+            left: -16.379em;
+        }
+    }
+
+    /* My Account - LEVEL 3 */
     #top ul.nav ul ul {
         left: -16.379em;
     }
@@ -488,6 +501,10 @@ TODO: Update to .less mixins
 		color: rgb(180, 180,180); /* @logoGrey */
 		font-size: 2.844em;
 	}
+
+    #main h1 {
+        text-shadow: 1px 1px 1px rgba(50, 50, 50, .75);
+    }
 	
 	h2 {
 		font-size: 2.013em;

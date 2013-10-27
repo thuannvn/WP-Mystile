@@ -287,66 +287,38 @@ TODO: Update to .less mixins
 		background-image: url('/2013/wp-content/uploads/2013/10/tag-background01.jpg'),
 		url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAG0lEQVQIW2NkYGAwBuKzQAwGjDAGNgGwSgwVAFCGAgUGpiTrAAAAAElFTkSuQmCC');
 		background-repeat:  no-repeat, repeat;
-		background-position:  top left, top left;
+		background-position: top left, top left;
 		min-height: 100%;
 		min-width: 1024px;
 		
 		/* Set up proportionate scaling */
-		width: 100%;
 		height: auto;
-        background-size: 100% 100%;
+		width: 100%;
+        background-size: 100% auto;
 
 		/* Set up positioning */
 		position: fixed;
 		top: 0;
 		left: 0;
-		opacity: 1;
-		-webkit-transition: top 1s ease-in;
-			-moz-transition: top 1s ease-in;
-				-o-transition: top 1s ease-in;
-				transition: top 1s ease-in;
-	}
-	body[class*="scroll1"] .page-background { 
-		opacity: .8; top: -25%; 
-		-webkit-transition: top .75s ease-out;
-			-moz-transition: top .75s ease-out;
-				-o-transition: top .75s ease-out;
-				transition: top .75s ease-out;
-	}
-	body[class*="scroll2"] .page-background { 
-		opacity: .6; top: -50%; 
-		-webkit-transition: top .75s ease-out;
-			-moz-transition: top .75s ease-out;
-				-o-transition: top .75s ease-out;
-				transition: top .75s ease-out;
-	}
-	body[class*="scroll3"] .page-background { 
-		opacity: .4; top: -75%; 
-		-webkit-transition: top .75s ease-out;
-			-moz-transition: top .75s ease-out;
-				-o-transition: top .75s ease-out;
-				transition: top .75s ease-out;
-	}
-	body[class*="scroll4"] .page-background { 
-		opacity: .2; top: -100%; 
-		-webkit-transition: top .75s ease-out;
-			-moz-transition: top .75s ease-out;
-				-o-transition: top .75s ease-out;
-				transition: top .75s ease-out;
-	}
-	body[class*="scroll5"] .page-background, body[class*="scroll6"] .page-background,
-	body[class*="scroll7"] .page-background, body[class*="scroll8"] .page-background,
-	body[class*="scroll9"] .page-background { opacity: 0; top: -100%; 
-		-webkit-transition: top .75s ease-out;
-			-moz-transition: top .75s ease-out;
-				-o-transition: top .75s ease-out;
-				transition: top .75s ease-out;
 	}
 
+	.page-background :after {
+		position:absolute;
+		z-index: 10;
+		top:0; left:0;
+		content: "";
+		width: 100%;
+		background: -moz-linear-gradient(top, rgba(220,240,220,0) 80%, rgba(220,240,220,1) 100%); /* FF3.6+ */
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(80%,rgba(220,240,220,0)), color-stop(100%,rgba(220,240,220,1))); /* Chrome,Safari4+ */
+		background: -webkit-linear-gradient(top, rgba(220,240,220,0) 80%,rgba(220,240,220,1) 100%); /* Chrome10+,Safari5.1+ */
+		background: -o-linear-gradient(top, rgba(220,240,220,0) 80%,rgba(220,240,220,1) 100%); /* Opera 11.10+ */
+		background: -ms-linear-gradient(top, rgba(220,240,220,0) 80%,rgba(220,240,220,1) 100%); /* IE10+ */
+		background: linear-gradient(to bottom, rgba(220,240,220,0) 80%,rgba(220,240,220,1) 100%); /* W3C */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00dcf0dc', endColorstr='#dcf0dc',GradientType=0 ); /* IE6-9 */		
+	}
 
 	#wrapper {
 		position: relative;
-		/*background: rgba(252, 252, 252,.2);*/
 	}
 
 

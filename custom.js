@@ -1,14 +1,16 @@
-var toggleBodyClass = function (scrlPos) {
-    if (document.body.className.indexOf('scroll') !== -1) {
-        document.body.className = document.body.className.replace(/\s?(scroll)[0-9]*/i, "");
-    }
-
-    scrlPos = (scrlPos < 100 && scrlPos !== 0) ? 100 : scrlPos; // Mac OS fix 
-    scrlPos = (scrlPos > 900) ? 900 : scrlPos;
-    document.body.className += " scroll" + scrlPos;
+; var bgrEffect = { 
+	bgr: document.querySelector('.page-background'),
+	bgrTop: 0,
+	init: function() {
+		window.onscroll = function() {
+			bgrEffect.bgrStyle(window.scrollY);
+		};
+	},
+	bgrStyle: function(scrlPos){
+		if (scrlPos > 120 || scrlPos === this.bgrTop ) return false;
+		var _top = scrlPos, filtr = _top/5;
+		bgrEffect.bgr.setAttribute('style', 'top:-' + _top + 'px;-webkit-filter: blur(' + filtr + 'px);-mos-filter: blur(' + filtr + 'px);-o-filter: blur(' + filtr + 'px);-ms-filter: blur(' + filtr + 'px);filter: blur(' + filtr + 'px);');
+		bgrEffect.bgrTop = _top;
+	}
 };
-
-window.onscroll = function (e) {
-    //console.log(window.scrollY);
-    toggleBodyClass(window.scrollY);
-};
+bgrEffect.init();

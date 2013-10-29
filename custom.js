@@ -1,16 +1,28 @@
-; var bgrEffect = { 
-	bgr: document.querySelector('.page-background'),
-	bgrTop: 0,
-	init: function() {
-		window.onscroll = function() {
-			bgrEffect.bgrStyle(window.scrollY);
-		};
-	},
-	bgrStyle: function(scrlPos){
-		if (scrlPos > 120 || scrlPos === this.bgrTop ) return false;
-		var _top = scrlPos, filtr = _top/5;
-		bgrEffect.bgr.setAttribute('style', 'top:-' + _top + 'px;-webkit-filter: blur(' + filtr + 'px);-mos-filter: blur(' + filtr + 'px);-o-filter: blur(' + filtr + 'px);-ms-filter: blur(' + filtr + 'px);filter: blur(' + filtr + 'px);');
-		bgrEffect.bgrTop = _top;
-	}
+;var bgEff = {
+    bg: document.querySelector('.page-background'),
+    hasBlur: false,
+    maxValue: 120,
+    bgTop: 0,
+    init: function () {
+        window.onscroll = function () {
+            bgEff.bgrApply(window.scrollY);
+        };
+    },
+
+    bgrApply: function (scrlPos) {
+        if (scrlPos > bgEff.maxValue && bgEff.bgTop === bgEff.maxValue) return false;
+        bgEff.bgTop = scrlPos > bgEff.maxValue ? bgEff.maxValue : scrlPos;
+        bgEff.bg.style.top = -bgEff.bgTop + 'px';
+        if (scrlPos === 0) { 
+            document.documentElement.className = document.documentElement.className.replace(/ blur/g, ''); 
+            bgEff.hasBlur = false; 
+        }
+        else if (!bgEff.hasBlur) { 
+            document.documentElement.className += " blur"; 
+            bgEff.hasBlur = true; 
+        }
+        //console.log(scrlPos);
+    }
 };
-bgrEffect.init();
+bgEff.init();
+

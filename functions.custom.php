@@ -19,7 +19,7 @@ add_action('woo_head', 'tag_background_style');
 function tag_background_style() {
   if( get_field('page-background') ) {
 ?>
-    <style type="text/css" media="screen">
+    <style type="text/css" media="screen and (min-width: 768px)">
 	.page-background { background-image: url("<?php the_field('page-background'); ?>"), url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAG0lEQVQIW2NkYGAwBuKzQAwGjDAGNgGwSgwVAFCGAgUGpiTrAAAAAElFTkSuQmCC"); }
     </style>
 <?php	
@@ -31,7 +31,7 @@ function tag_background_style() {
 add_action( 'woo_head', 'add_head_tags' );
 
 function add_head_tags() {
-	echo '<meta name="viewport" content="initial-scale=2.3, user-scalable=no">';
+	echo '<meta name="viewport" content="initial-scale=1">';
     $base_url = defined('WP_CONTENT_URL')? WP_CONTENT_URL : '';
     echo '<!--[if lte IE 7]><script type="text/javascript" src="' . $base_url . '/themes/mystile/typefaces/lte-ie7.js"></script><![endif]-->';
 }
@@ -40,7 +40,7 @@ function add_head_tags() {
 add_action('woo_top', 'add_page_background');
 
 function add_page_background() {
-    echo '<div class="page-background"></div>';
+    echo '<div class="page-background"></div><div class="page-background-overlay"></div>';
 }
 
 

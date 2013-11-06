@@ -302,7 +302,7 @@ TODO: Update to .less mixins
 		left: 0;
 	}
 
-	.page-background :after {
+	.page-background:after {
 		position:absolute;
 		z-index: 10;
 		top:0; left:0;
@@ -337,7 +337,7 @@ TODO: Update to .less mixins
 	     animation-iteration-count: 1;
 	     animation-direction: alternate;
 	     animation-timing-function: ease-out;
-	     animation-delay: 0.2s;
+	     animation-delay: 0.2s; 
 
 	     -webkit-animation-name: blurAnim;
 	     -webkit-animation-duration: 1s;
@@ -357,7 +357,7 @@ TODO: Update to .less mixins
 
 	#top, #header #navigation,
 	#content, .footer-wrap section {
-		background: rgba(255, 255, 255, 0.95);
+		background: rgba(255, 255, 255, 0.9);
 	}
 
 

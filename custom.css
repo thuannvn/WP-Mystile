@@ -302,42 +302,61 @@ TODO: Update to .less mixins
 		left: 0;
 	}
 
+    .page-background-overlay {
+        position: fixed;
+        top: 0; left: 0;
+        background: #fff;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        -webkit-filter: blur(2px);
+                filter: blur(2px);
+    }
+
+    .blur .page-background-overlay {
+        opacity: 0.7;
+        transition: opacity .25s ease-in-out;
+        -moz-transition: opacity .25s ease-in-out;
+        -webkit-transition: opacity .25s ease-in-out;
+    }
+
+/*
 	.page-background:after {
 		position:absolute;
 		z-index: 10;
 		top:0; left:0;
 		content: "";
 		width: 100%;
-		background: -moz-linear-gradient(top, rgba(220,240,220,0) 80%, rgba(220,240,220,1) 100%); /* FF3.6+ */
-		background: -webkit-gradient(linear, left top, left bottom, color-stop(80%,rgba(220,240,220,0)), color-stop(100%,rgba(220,240,220,1))); /* Chrome,Safari4+ */
-		background: -webkit-linear-gradient(top, rgba(220,240,220,0) 80%,rgba(220,240,220,1) 100%); /* Chrome10+,Safari5.1+ */
-		background: -o-linear-gradient(top, rgba(220,240,220,0) 80%,rgba(220,240,220,1) 100%); /* Opera 11.10+ */
-		background: -ms-linear-gradient(top, rgba(220,240,220,0) 80%,rgba(220,240,220,1) 100%); /* IE10+ */
-		background: linear-gradient(to bottom, rgba(220,240,220,0) 80%,rgba(220,240,220,1) 100%); /* W3C */
-		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00dcf0dc', endColorstr='#dcf0dc',GradientType=0 ); /* IE6-9 */		
+		background: -moz-linear-gradient(top, rgba(220,240,220,0) 80%, rgba(220,240,220,1) 100%); 
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(80%,rgba(220,240,220,0)), color-stop(100%,rgba(220,240,220,1))); 
+		background: -webkit-linear-gradient(top, rgba(220,240,220,0) 80%,rgba(220,240,220,1) 100%); 
+		background: -o-linear-gradient(top, rgba(220,240,220,0) 80%,rgba(220,240,220,1) 100%); 
+		background: -ms-linear-gradient(top, rgba(220,240,220,0) 80%,rgba(220,240,220,1) 100%); 
+		background: linear-gradient(to bottom, rgba(220,240,220,0) 80%,rgba(220,240,220,1) 100%); 
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00dcf0dc', endColorstr='#dcf0dc',GradientType=0 ); 
 	}
+*/
 
-
-
+/*
     @-webkit-keyframes blurAnim {
 	    0% {
-		    -webkit-filter: grayscale(0) blur(1) opacity(0);
-                    filter: grayscale(0) blur(1) opacity(0);
+		    -webkit-filter: opacity(0);
+                    filter: opacity(0);
 	    }
 	    100% {
-		    -webkit-filter: grayscale(.2) blur(4px) opacity(.7);
-                    filter: grayscale(.2) blur(4px) opacity(.7);
+		    -webkit-filter: opacity(.7);
+                    filter: opacity(.7);
 	    }
     }
 
-    .blur .page-background {
+    .blur .page-background-overlay {
 
 	     animation-name: blurAnim;
 	     animation-duration: 1s;
 	     animation-iteration-count: 1;
 	     animation-direction: alternate;
 	     animation-timing-function: ease-out;
-	     animation-delay: 0.2s; 
+	     animation-delay: 0.2s;
 
 	     -webkit-animation-name: blurAnim;
 	     -webkit-animation-duration: 1s;
@@ -347,7 +366,7 @@ TODO: Update to .less mixins
 	     -webkit-animation-fill-mode: forwards;
 	     -webkit-animation-delay: 0.2s;
     }
-
+*/
 
 
 	#wrapper {
@@ -357,7 +376,7 @@ TODO: Update to .less mixins
 
 	#top, #header #navigation,
 	#content, .footer-wrap section {
-		background: rgba(255, 255, 255, 0.9);
+		background: rgba(255, 255, 255, 0.95);
 	}
 
 
@@ -562,6 +581,11 @@ TODO: Update to .less mixins
 		background: rgb(0, 164, 79); /* @contentGreen */
 	}
 
+    /* Order complete check */
+    ul.order_details:before {
+		color: rgb(0, 164, 79); /* @contentGreen */
+	}
+
 
 	/* Buttons */
 	a.button, a.comment-reply-link, 
@@ -625,7 +649,6 @@ ul.products li.product .price {
 .post img.thumbnail, .type-page img.thumbnail {
     border-bottom: 0.327em solid rgb(0, 164, 79) !important;
 }
-
 
 /* Checkboxes */
 input[type="checkbox"] {

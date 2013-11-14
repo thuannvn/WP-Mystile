@@ -40,7 +40,7 @@ function add_head_tags() {
 add_action('woo_top', 'add_page_background');
 
 function add_page_background() {
-    echo '<div class="page-background"></div><div class="page-background-overlay"></div>';
+    echo '<div class="page-background"><div class="page-background-overlay"></div></div>';
 }
 
 
@@ -49,16 +49,17 @@ add_action('woo_foot', 'add_page_customJS');
 
 function add_page_customJS() {
     $base_url = defined('WP_CONTENT_URL')? WP_CONTENT_URL : '';
-    // echo '<script type="text/javascript" src="' . $base_url . '/themes/mystile/custom.js"></script>'; //' .  get_permalink('custom.js') . '
+    echo '<script type="text/javascript" src="' . $base_url . '/themes/mystile/custom.js"></script>'; //' .  get_permalink('custom.js') . '
 }
 
 
-
+// http://www.skyverge.com/blog/how-to-set-woocommerce-virtual-order-status-to-complete-after-payment/
 add_filter( 'woocommerce_payment_complete_order_status', 'virtual_order_payment_complete_order_status', 10, 2 );
  
 function virtual_order_payment_complete_order_status( $order_status, $order_id ) {
   $order = new WC_Order( $order_id );
- 
+  // echo "<script>console.log('Order id: " . $order_id . ". Order status:  " . $order_status . "')</script>";
+
   if ( 'processing' == $order_status &&
        ( 'on-hold' == $order->status || 'pending' == $order->status || 'failed' == $order->status ) ) {
  
@@ -91,6 +92,7 @@ function virtual_order_payment_complete_order_status( $order_status, $order_id )
  
   // non-virtual order, return original status
   return $order_status;
+
 }
 
 

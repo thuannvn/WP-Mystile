@@ -625,3 +625,37 @@ ul.products li.product .price {
 .post img.thumbnail, .type-page img.thumbnail {
     border-bottom: 0.327em solid rgb(0, 164, 79) !important;
 }
+
+
+/* Checkboxes */
+input[type="checkbox"] {
+	border-radius: 0;
+}
+input[type="checkbox"]:before,
+input[type="checkbox"]:checked:before {
+	content: "\e022";
+	font-family: 'TAG001';
+	font-size: 1.4em;
+	line-height: 1.2em;
+}
+input[type="checkbox"]:checked:before {
+	content: "\e021";
+}
+
+@media only screen and (max-width: 768px)
+	/* Mobile Navigation */
+	#top ul.nav > .cart {
+		padding-left: 50px;
+		width: 32%;
+	}
+	#top ul.nav > .cart li.cart {
+		width: auto; 
+	}
+
+	#header .nav-toggle {
+		position: absolute;
+		top: -6em;
+		right: auto;
+		left: 0; 
+	}
+}

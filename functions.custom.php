@@ -40,7 +40,7 @@ function add_head_tags() {
 add_action('woo_top', 'add_page_background');
 
 function add_page_background() {
-    echo '<div class="page-background"><div class="page-background-overlay"></div></div>';
+    echo '<div class="page-background"></div><div class="page-background-overlay"></div>';
 }
 
 

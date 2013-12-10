@@ -665,12 +665,16 @@ input[type="checkbox"]:checked:before {
 	content: "\e021";
 }
 
-@media only screen and (max-width: 768px)
+
+#wrapper { min-width: 300px; }
+
+@media only screen and (max-width: 768px) {
 	/* Mobile Navigation */
-	#top ul.nav > .cart {
+	#top ul.nav > li.cart {
 		padding-left: 50px;
 		width: 32%;
-	}
+    }
+
 	#top ul.nav > .cart li.cart {
 		width: auto; 
 	}
@@ -681,4 +685,17 @@ input[type="checkbox"]:checked:before {
 		right: auto;
 		left: 0; 
 	}
+
+    table.cart td.actions .coupon .input-text, table.cart td.actions .coupon .button {
+        width: 47%;
+    }
+
+    #content #main ul, #content #main ol {
+        margin-left: 1.618em;
+    }
+
+    #content #main {
+        font-size:  1.25em;
+}
+
 }

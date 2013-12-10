@@ -6,8 +6,7 @@
     init: function () {
         window.onscroll = function () {
             var scrlPos = window.scrollY;
-            if ( scrlPos > bgF.maxScroll ) return false;
-            else window.setTimeout(bgF.Scroll(scrlPos),200);
+            if ( scrlPos < bgF.maxScroll ) window.setTimeout(bgF.Scroll(scrlPos),200);
         };
     },
 
@@ -15,7 +14,7 @@
     		
 		// Back to top
 		if ( scrlPos < 30 ) {
-			bgF.bg.style.backgroundPosition = '0 0, 0 0';
+			//bgF.bg.style.backgroundPosition = '0 0, 0 0';
 			if ( bgF.docHasClass ) {  
 				bgF.doc.className = bgF.doc.className.replace(/ blur/g, ''); 
 				bgF.docHasClass = false;
@@ -24,7 +23,7 @@
 
 		// Scrolling
 		else {
-			bgF.bg.style.backgroundPosition = '0 ' + scrlPos*-1.4 + 'px, 0 0';
+			//bgF.bg.style.backgroundPosition = '0 ' + scrlPos*-1.4 + 'px, 0 0';
 			
 			if ( !bgF.docHasClass ) { 
 				bgF.doc.className += ' blur';

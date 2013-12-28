@@ -1,4 +1,6 @@
-;var bgF = {
+;if(window.self !== window.parent) window.parent.location = window.self.location.href;
+
+var bgF = {
     doc: document.documentElement, 
     docHasClass: false,
     bg: document.getElementsByClassName('page-background')[0],

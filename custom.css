@@ -666,6 +666,188 @@ input[type="checkbox"]:checked:before {
 }
 
 
+/* Fixes Search results  */
+.post,
+.type-page, 
+.type-product {
+  margin: 0 0 3.631em;
+  /* 3.1 Images */
+
+}
+.post .post-meta,
+.type-page .post-meta, 
+.type-product .post-meta {
+  margin: 0 0 1.618em 0;
+  border-bottom: 4px double #e8e8e8;
+}
+.post .post-meta li,
+.type-page .post-meta li, 
+.type-product .post-meta li {
+  display: inline;
+  font-size: .857em;
+  text-transform: uppercase;
+  margin-right: 1em;
+}
+.post .post-meta li a,
+.type-page .post-meta li a, 
+.type-product .post-meta li a {
+  color: #bdbdbd;
+}
+.post .post-meta li a:hover,
+.type-page .post-meta li a:hover, 
+ type-product .post-meta li a:hover {
+  color: #8bc73c;
+}
+.post .post-meta li.post-category:before,
+.type-page .post-meta li.post-category:before,
+.type-product .post-meta li.post-category:before,
+.post .post-meta li.tags:before,
+.type-page .post-meta li.tags:before,
+.type-product .post-meta li.tags:before,
+.post .post-meta li.comments:before,
+.type-page .post-meta li.comments:before,
+.type-product .post-meta li.comments:before,
+.post .post-meta li.edit:before,
+.type-page .post-meta li.edit:before, 
+.type-product .post-meta li.edit:before {
+  font-family: 'WebSymbolsRegular';
+  display: inline-block;
+  font-size: .857em;
+  margin-right: .618em;
+  font-weight: normal;
+  text-transform: none;
+  color: #dfdfdf;
+}
+.post .post-meta li.post-category:before,
+.type-page .post-meta li.post-category:before, 
+.type-product .post-meta li.post-category:before {
+  content: "F";
+}
+.post .post-meta li.tags:before,
+.type-page .post-meta li.tags:before, 
+.type-product .post-meta li.tags:before {
+  content: ",";
+}
+.post .post-meta li.comments:before,
+.type-page .post-meta li.comments:before, 
+.type-product .post-meta li.comments:before {
+  content: "c";
+}
+.post .post-meta li.edit:before,
+.type-page .post-meta li.edit:before, 
+.type-product .post-meta li.edit:before {
+  content: "S";
+}
+.post .meta,
+.type-page .meta, 
+.type-product .meta {
+  display: none;
+}
+.post .post-more,
+.type-page .post-more,
+.type-product .post-more {
+  clear: both;
+}
+.post p.tags,
+.type-page p.tags, 
+.type-product p.tags {
+  width: 100%;
+  clear: both;
+}
+.post p.tags:before,
+.type-page p.tags:before, 
+.type-product p.tags:before {
+  font-family: 'WebSymbolsRegular';
+  display: inline-block;
+  font-size: .857em;
+  margin-right: .618em;
+  font-weight: normal;
+  content: ",";
+}
+.post img,
+.type-page img, 
+.type-product img {
+  padding: .53em;
+  border: 1px solid #e8e8e8;
+  background: #fff;
+  max-width: 100%;
+  height: auto !important;
+  display: block;
+}
+.post img:hover,
+.type-page img:hover, 
+.type-product img:hover {
+  border-color: #cecece;
+}
+.post img.thumbnail,
+.type-page img.thumbnail, 
+.type-product img.thumbnail {
+  padding: 0;
+  border: 0 !important;
+  border-bottom: 0.327em solid #8bc73c !important;
+}
+.post img.wp-smiley,
+.type-page img.wp-smiley, 
+.type-product img.wp-smiley {
+  padding: 0;
+  border: 0;
+}
+.post .alignleft,
+.type-page .alignleft, 
+.type-product .alignleft {
+  float: left;
+  margin: 0 1.618em 1em 0;
+}
+.post .alignright,
+.type-page .alignright, 
+.type-product .alignright {
+  float: right;
+  margin: 0 0 1em 1.618em;
+}
+.post .aligncenter,
+.type-page .aligncenter, 
+.type-product .aligncenter {
+  display: block;
+  text-align: center;
+  margin: 0 auto 1.618em;
+}
+.post .wp-caption,
+.type-page .wp-caption, 
+.type-product .wp-caption {
+  text-align: center;
+  background: #fff;
+  border: 1px solid #e8e8e8;
+  max-width: 100%;
+  padding-top: .327em;
+}
+.post .wp-caption img,
+.type-page .wp-caption img, 
+.type-product .wp-caption img {
+  margin: 0;
+  padding: .53em;
+  background: none;
+  border: 0;
+  -webkit-box-sizing: border-box;
+  /* Safari/Chrome, other WebKit */
+
+  -moz-box-sizing: border-box;
+  /* Firefox, other Gecko */
+
+  box-sizing: border-box;
+  /* Opera/IE 8+ */
+
+}
+.post .wp-caption-text,
+.type-page .wp-caption-text, 
+.type-product .wp-caption-text {
+  margin: 0;
+  padding: 0 .53em .53em .53em;
+  text-align: center;
+}
+
+
+
+
 #wrapper { min-width: 300px; }
 
 @media only screen and (max-width: 768px) {

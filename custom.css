@@ -14,6 +14,102 @@ GLOBAL STYLES
 ----------------
 Add styles beneath this line that you want to be applied across your entire site */
 
+h1, h2, h3, h4, h5, h6 {
+	font-family: Helvetica, Verdana, Arial, sans-serif;
+}
+
+h1 {
+	color: rgb(180, 180,180); /* @logoGrey */
+	font-size: 2.844em;
+}
+
+#main h1 {
+	text-shadow: 1px 1px 1px rgba(50, 50, 50, .75);
+}
+
+h2 {
+	font-size: 2.013em;
+}
+
+h2, h3, h4, h5, h6 {
+	color:  rgb(0, 164, 79); /* @logoGreen */
+}
+
+
+
+/* Navigation Level 3rd iPad bug - Note: Site specific */
+@media only screen and (max-width: 768px) {
+	body { padding: 0 0.745em; }
+	#wrapper { min-width: 275px; }
+	#top { 
+		margin: 0 -0.5em; 
+		padding: 1.618em 0.5em;
+	}
+
+	h1 {
+		font-size: 1.5em;
+	}
+
+	h2 {
+		font-size: 1.3em;
+	}
+
+	h3, h4, h5 {
+		font-size: 1.14em;
+	}
+
+	#top .wc-nav li.search {
+		width: 48%;
+	}
+
+	#header #navigation {
+		width: 100%;
+		position: absolute;
+		top: -3.6em; left: 0;
+	}
+
+	#header #navigation ul.nav ul ul {
+		left: -16.379em;
+	}
+
+
+	/* Mobile Navigation */
+	#top ul.nav > li.cart {
+		padding-left: 50px;
+		width: 32%;
+    }
+
+	#top ul.nav > .cart li.cart {
+		width: auto; 
+	}
+
+	#header .nav-toggle {
+		position: absolute;
+		top: -7em;
+		right: auto;
+		left: 0; 
+	}
+
+    table.cart td.actions .coupon .input-text, table.cart td.actions .coupon .button {
+        width: 47%;
+    }
+
+    #content #main ul, #content #main ol {
+        margin-left: 1.618em;
+    }
+
+    #content #main {
+        font-size:  1.25em;
+	}
+
+}
+
+@media only screen and (min-width: 480px) /* and (max-width: 800px) */
+	#top ul.nav>li.cart {
+		padding-left: 0px;
+		width: auto;
+	}
+}
 
 /* 
 DESKTOP STYLES
@@ -134,12 +230,6 @@ Uses custom Icon font
         top:  0.1em;
     }
 
-    /* Navigation Level 3rd iPad bug - Note: Site specific */
-    @media only screen and (max-width: 768px) {
-        #header #navigation ul.nav ul ul {
-            left: -16.379em;
-        }
-    }
 
     /* My Account - LEVEL 3 */
     #top ul.nav ul ul {
@@ -517,27 +607,6 @@ TODO: Update to .less mixins
         background-position: 0 0;
     }
 
-	h1, h2, h3, h4, h5, h6 {
-		font-family: Helvetica, Verdana, Arial, sans-serif;
-	}
-
-	h1 {
-		color: rgb(180, 180,180); /* @logoGrey */
-		font-size: 2.844em;
-	}
-
-    #main h1 {
-        text-shadow: 1px 1px 1px rgba(50, 50, 50, .75);
-    }
-	
-	h2 {
-		font-size: 2.013em;
-	}
-
-	h2, h3, h4, h5, h6 {
-		color:  rgb(0, 164, 79); /* @logoGreen */
-	}
-
 
 	.type-post .meta .month {
 		background: rgb(0, 164, 79); /* @logoGreen */
@@ -846,38 +915,3 @@ input[type="checkbox"]:checked:before {
 }
 
 
-
-
-#wrapper { min-width: 300px; }
-
-@media only screen and (max-width: 768px) {
-	/* Mobile Navigation */
-	#top ul.nav > li.cart {
-		padding-left: 50px;
-		width: 32%;
-    }
-
-	#top ul.nav > .cart li.cart {
-		width: auto; 
-	}
-
-	#header .nav-toggle {
-		position: absolute;
-		top: -6em;
-		right: auto;
-		left: 0; 
-	}
-
-    table.cart td.actions .coupon .input-text, table.cart td.actions .coupon .button {
-        width: 47%;
-    }
-
-    #content #main ul, #content #main ol {
-        margin-left: 1.618em;
-    }
-
-    #content #main {
-        font-size:  1.25em;
-}
-
-}
